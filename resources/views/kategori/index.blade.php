@@ -26,6 +26,16 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-4">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header with-border">
+                                <h3 class="card-title">Tambah</h3>
+                            </div>
+                        <div class="card-body">
+                            {{ $slot }}
+                        </div>
+                        {{ $footer }}
+                    </div>
                         @card
                             @slot('title')
                             Tambah
@@ -57,6 +67,7 @@
                             @endslot
                         @endcard
                     </div>
+
                     <div class="col-md-8">
                         @card
                             @slot('title')
