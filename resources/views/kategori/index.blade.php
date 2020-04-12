@@ -49,6 +49,8 @@
                                         </div>
                                     </form>
                                 </div>
+                            </div>
+                            <div class="card">
                                 <div class="card-header with-border">
                                     <h3 class="card-title">List Kategori</h3>
                                 </div>
@@ -89,10 +91,9 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div> 
-                        <div class="col-md-8">
-                            
+                    </div>
+                </div>
             </div>
         </section>
     </div>
