@@ -50,6 +50,12 @@
                                     </form>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="col-md-8">
                             <div class="card">
                                 <div class="card-header with-border">
                                     <h3 class="card-title">List Kategori</h3>
