@@ -36,7 +36,6 @@
                                     {!! session('error') !!}
                                 @endalert
                             @endif
-​
                             <form role="form" action="{{ route('kategori.store') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
