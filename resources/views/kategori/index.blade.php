@@ -32,11 +32,6 @@
                                 <h3 class="card-title">Tambah</h3>
                             </div>
                         <div class="card-body">
-                            
-                        </div>
-                        
-                    </div>
-
                             <form role="form" action="{{ route('kategori.store') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
@@ -53,6 +48,8 @@
                                     <button class="btn btn-primary">Simpan</button>
                                 </div>
                             </form>
+                        </div>
+                        
                     </div>
 
                     <div class="col-md-8">
