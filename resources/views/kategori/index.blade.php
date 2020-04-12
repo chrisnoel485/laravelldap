@@ -81,10 +81,10 @@
                                     </thead>
                                     <tbody>
                                         @php $no = 1; @endphp
-                                        @forelse ($categories as $row)
+                                        @forelse ($kategori as $row)
                                         <tr>
                                             <td>{{ $no++ }}</td>
-                                            <td>{{ $row->name }}</td>
+                                            <td>{{ $row->nama }}</td>
                                             <td>{{ $row->description }}</td>
                                             <td>
                                                 <form action="{{ route('kategori.destroy', $row->id) }}" method="POST">
