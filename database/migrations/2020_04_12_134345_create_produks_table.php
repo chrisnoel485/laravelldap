@@ -14,8 +14,22 @@ class CreateProduksTable extends Migration
     public function up()
     {
         Schema::create('produks', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('nama');
+            $table->string('sn');
+            $table->string('description')->nullable();
+            $table->integer('kategori_id');
+            $table->integer('lokasi_id');
+            $table->integer('merek_id');
+            $table->year('tahun');
+            $table->time('expired', 0);
             $table->timestamps();
+            $table->foreign('kategori_id')->references('id')->on('kategoris')
+                ->onDelete('cascade');
+            $table->foreign('lokasi_id')->references('id')->on('lokasis')
+                ->onDelete('cascade');
+                $table->foreign('merek_id')->references('id')->on('mereks')
+                ->onDelete('cascade');
         });
     }
 
