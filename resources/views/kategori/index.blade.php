@@ -30,7 +30,6 @@
                             <div class="card">
                                 <div class="card-header with-border">
                                     <h3 class="card-title">Tambah</h3>
-                                    <h3 class="card-title">Tambah</h3>
                                 </div>
                                 <div class="card-body">
                                     <form role="form" action="{{ route('kategori.store') }}" method="POST">
@@ -51,49 +50,51 @@
                                     </form>
                                 </div>
                             </div>
-                        </div> 
-                        <div class="col-md-8">
                             <div class="card">
                                 <div class="card-header with-border">
                                     <h3 class="card-title">List Kategori</h3>
                                 </div>
-                            <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <td>#</td>
-                                            <td>Kategori</td>
-                                            <td>Deskripsi</td>
-                                            <td>Aksi</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @php $no = 1; @endphp
-                                        @forelse ($kategori as $row)
-                                        <tr>
-                                            <td>{{ $no++ }}</td>
-                                            <td>{{ $row->nama }}</td>
-                                            <td>{{ $row->description }}</td>
-                                            <td>
-                                                <form action="{{ route('kategori.destroy', $row->id) }}" method="POST">
-                                                    @csrf
-                                                    <input type="hidden" name="_method" value="DELETE">
-                                                    <a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                        @empty
-                                        <tr>
-                                            <td colspan="4" class="text-center">Tidak ada data</td>
-                                        </tr>
-                                        @endforelse
-                                    </tbody>
-                                </table>
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <td>#</td>
+                                                    <td>Kategori</td>
+                                                    <td>Deskripsi</td>
+                                                    <td>Aksi</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @php $no = 1; @endphp
+                                                @forelse ($kategori as $row)
+                                                <tr>
+                                                    <td>{{ $no++ }}</td>
+                                                    <td>{{ $row->nama }}</td>
+                                                    <td>{{ $row->description }}</td>
+                                                    <td>
+                                                        <form action="{{ route('kategori.destroy', $row->id) }}" method="POST">
+                                                            @csrf
+                                                            <input type="hidden" name="_method" value="DELETE">
+                                                            <a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                @empty
+                                                <tr>
+                                                    <td colspan="4" class="text-center">Tidak ada data</td>
+                                                </tr>
+                                                @endforelse
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                    </div>
-                </div>
+
+                        </div> 
+                        <div class="col-md-8">
+                            
             </div>
         </section>
     </div>
