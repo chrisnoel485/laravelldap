@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('/kategori', 'kategoriController')->except([
+Route::resource('/kategori', 'KategoriController')->except([
     'create', 'show'
 ]);
