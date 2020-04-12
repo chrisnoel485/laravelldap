@@ -49,21 +49,14 @@
                                 </div>
                             </form>
                         </div>
-                        
                     </div>
 
                     <div class="col-md-8">
-                        @card
-                            @slot('title')
-                            List Kategori
-                            @endslot
-                            
-                            @if (session('success'))
-                                @alert(['type' => 'success'])
-                                    {!! session('success') !!}
-                                @endalert
-                            @endif
-                            
+                        <div class="card">
+                            <div class="card-header with-border">
+                                <h3 class="card-title">List Kategori</h3>
+                            </div>
+                            <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
@@ -98,10 +91,6 @@
                                     </tbody>
                                 </table>
                             </div>
-                            @slot('footer')
-
-                            @endslot
-                        @endcard
                     </div>
                 </div>
             </div>
