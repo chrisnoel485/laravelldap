@@ -36,16 +36,6 @@
                         </div>
                         {{ $footer }}
                     </div>
-                        @card
-                            @slot('title')
-                            Tambah
-                            @endslot
-                            
-                            @if (session('error'))
-                                @alert(['type' => 'danger'])
-                                    {!! session('error') !!}
-                                @endalert
-                            @endif
 
                             <form role="form" action="{{ route('kategori.store') }}" method="POST">
                                 @csrf
@@ -59,13 +49,10 @@
                                     <label for="description">Deskripsi</label>
                                     <textarea name="description" id="description" cols="5" rows="5" class="form-control {{ $errors->has('description') ? 'is-invalid':'' }}"></textarea>
                                 </div>
-                            @slot('footer')
                                 <div class="card-footer">
                                     <button class="btn btn-primary">Simpan</button>
                                 </div>
                             </form>
-                            @endslot
-                        @endcard
                     </div>
 
                     <div class="col-md-8">
