@@ -15,6 +15,8 @@ class KategoriController extends Controller
     public function index()
     {
         //
+        $kategori = Kategori::orderBy('created_at', 'DESC')->paginate(10);
+        return view('kategori.index', compact('kategori'));
     }
 
     /**
