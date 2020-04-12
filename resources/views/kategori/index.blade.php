@@ -32,9 +32,9 @@
                                 <h3 class="card-title">Tambah</h3>
                             </div>
                         <div class="card-body">
-                            {{ $slot }}
+                            
                         </div>
-                        {{ $footer }}
+                        
                     </div>
 
                             <form role="form" action="{{ route('kategori.store') }}" method="POST">
