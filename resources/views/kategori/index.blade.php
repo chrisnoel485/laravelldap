@@ -31,6 +31,9 @@
                                 <div class="card-header with-border">
                                     <h3 class="card-title">Tambah</h3>
                                 </div>
+                                <div class="card-header with-border">
+                                    <h3 class="card-title">Tambah</h3>
+                                </div>
                                 <div class="card-body">
                                     <form role="form" action="{{ route('kategori.store') }}" method="POST">
                                         @csrf
