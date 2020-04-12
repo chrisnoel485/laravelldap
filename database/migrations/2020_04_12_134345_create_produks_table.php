@@ -18,9 +18,9 @@ class CreateProduksTable extends Migration
             $table->string('nama');
             $table->string('sn');
             $table->string('description')->nullable();
-            $table->integer('kategori_id',10);
-            $table->integer('lokasi_id',10);
-            $table->integer('merek_id',10);
+            $table->integer('kategori_id')->unsigned();;
+            $table->integer('lokasi_id')->unsigned();;
+            $table->integer('merek_id')->unsigned();;
             $table->year('tahun');
             $table->time('expired', 0);
             $table->timestamps();
