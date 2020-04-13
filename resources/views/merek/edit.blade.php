@@ -39,11 +39,11 @@
                                 @endif
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <form role="form" action="{{ route('merek.update', $lokasi->id) }}" method="POST">
+                                        <form role="form" action="{{ route('merek.update', $merek->id) }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="_method" value="PUT">
                                             <div class="form-group">
-                                                <label for="nama">Lokasi</label>
+                                                <label for="nama">Merek</label>
                                                 <input type="text" 
                                                     name="nama"
                                                     value="{{ $merek->nama }}"
