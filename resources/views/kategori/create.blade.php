@@ -40,11 +40,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <form action="{{ route('kategori.store') }}" method="POST">
-                                            {{ csrf_field() }}
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-6">  
-                                                        <div class="form-group">
+                                            @csrf
+                                            <div class="form-group">
                                                             <label for="nama">Nama Kategori</label>
                                                             <input type="text" name="nama" placeholder="Masukkan Nama Kategori" class="form-control" >
                                                         </div>
@@ -52,9 +49,6 @@
                                                             <label for="deskripsi">Deskripsi</label>
                                                             <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" placeholder="Masukkan Deskripsi Kategori" class="form-control"></textarea>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="card-footer">
                                                 <a href="{{ URL::to('kategori') }}" class="btn btn-outline-info">Kembali</a>
                                                 <input type="submit" value="Proses" class="btn btn-primary pull-right">
