@@ -17,5 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('/kategori', 'KategoriController')->except([
-    'create', 'show'
+    'show'
 ]);
