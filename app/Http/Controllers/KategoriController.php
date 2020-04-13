@@ -93,8 +93,6 @@ class KategoriController extends Controller
         //
         $kategori = Kategori::findOrFail($id);
         return view('kategori.edit', compact('kategori'));
-       // $kategori = DB::table('kategoris')->where('id',$id)->get();
-	   // return view('kategori/edit',['kategoris' => $kategori]);
     }
 
     /**
@@ -104,9 +102,34 @@ class KategoriController extends Controller
      * @param  \App\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request, $id)
     {
         //
+        $rules =[
+            'nama'=>'required',
+        ];
+ 
+        $validator = Validator::make($rules, [
+            'nama.required'=>'Nama Kategori Tidak Boleh Kosong',
+        ]);
+        if ($validator->fails()) {
+ 
+            //refresh halaman
+            return Redirect::to('kategori.edit')
+            ->withErrors($validator);
+ 
+        }else{
+            $kategori = Kategori::findOrFail($id);
+            $kategori->update([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi
+            ]);
+            
+ 
+            Session::flash('message','Succes Edit Kategori');
+ 
+            return redirect('/kategori');
+        }
     }
 
     /**
@@ -120,7 +143,6 @@ class KategoriController extends Controller
         //
         $kategori = Kategori::findOrFail($id);
         $kategori->delete();
-        //DB::table('kategoris')->where('id',$id)->delete();
 
         Session::flash('message','Succes Delete Kategori');
 	    return redirect('/kategori');
