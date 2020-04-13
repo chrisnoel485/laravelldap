@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Merek;
 use Illuminate\Http\Request;
+use Redirect;
+use Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 class MerekController extends Controller
 {
