@@ -21,22 +21,34 @@
                 </div>
             </div>
         </div>
-
+​
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="col-md-8">
-                            <div class="card">
-                                <div class="card-header with-border">
-                                    <h3 class="card-title">List Kategori</h3>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">List Kategori</h3>
+                                <div class="card-tools">
+                                    <a href="{{ URL::to('/kategori/create')}}" class="btn btn-tool">
+                                        <i class="fa fa-plus"></i>
+                                        &nbsp; Tambah
+                                    </a>
                                 </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table table-hover">
+                            </div>
+                            <div class="card-body">
+                                @if (Session::has('message'))
+                                <div id="alert-msg" class="alert alert-success alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        {{ Session::get('message') }}
+                                </div>
+                                @endif
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <td>#</td>
+                                                    <td>No</td>
                                                     <td>Kategori</td>
                                                     <td>Deskripsi</td>
                                                     <td>Aksi</td>
@@ -46,7 +58,7 @@
                                                 @php $no = 1; @endphp
                                                 @forelse ($kategori as $row)
                                                 <tr>
-                                                    <td>{{ $no++ }}</td>
+                                                    <td class="text-center">{{ $no++ }}</td>
                                                     <td>{{ $row->nama }}</td>
                                                     <td>{{ $row->description }}</td>
                                                     <td>
@@ -68,7 +80,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     </div>
                 </div>
             </div>
