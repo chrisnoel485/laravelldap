@@ -65,7 +65,7 @@ class KategoriController extends Controller
             ]);
             
  
-            Session::flash('message','Succes Add Server');
+            Session::flash('message','Succes Add Kategori');
  
             return redirect('/kategori');
         }
@@ -111,8 +111,12 @@ class KategoriController extends Controller
      * @param  \App\Kategori  $kategori
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kategori $kategori)
+    public function destroy($id)
     {
         //
+        $kategori = Kategori::findOrFail($id);
+        $kategori->delete();
+        Session::flash('message','Succes Delete Kategori');
+	    return redirect('/kategori');
     }
 }
