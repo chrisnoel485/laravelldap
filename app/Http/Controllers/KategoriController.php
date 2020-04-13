@@ -122,7 +122,6 @@ class KategoriController extends Controller
         $kategori->delete();
         //DB::table('kategoris')->where('id',$id)->delete();
 
-        Session::flash('message','Succes Delete Kategori');
-	    return redirect('/kategori');
+        return redirect()->back()->with(['success' => 'Kategori: ' . $categories->name . ' Telah Dihapus']);
     }
 }
