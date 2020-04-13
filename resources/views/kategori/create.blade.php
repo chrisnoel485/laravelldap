@@ -46,11 +46,11 @@
                                                     <div class="col-md-6">  
                                                         <div class="form-group">
                                                             <label for="nama">Nama Kategori</label>
-                                                            <input type="text" name="hostname" placeholder="Masukkan Hostname Server" class="form-control" >
+                                                            <input type="text" name="nama" placeholder="Masukkan Nama Kategori" class="form-control" >
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="deskripsi">Deskripsi</label>
-                                                            <input type="text" name="sn" placeholder="Masukkan Serial Number Server" class="form-control" >
+                                                            <input type="text" name="deskripsi" placeholder="Masukkan Deskripsi Kategori" class="form-control" >
                                                         </div>
                                                     </div>
                                                 </div>
