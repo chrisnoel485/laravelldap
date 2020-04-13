@@ -15,6 +15,8 @@ class MerekController extends Controller
     public function index()
     {
         //
+        $merek = Merek::orderBy('created_at', 'DESC')->paginate(10);
+        return view('merek.index', compact('merek'));
     }
 
     /**
