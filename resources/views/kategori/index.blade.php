@@ -60,7 +60,7 @@
                                                 <tr>
                                                     <td class="text-center">{{ $no++ }}</td>
                                                     <td>{{ $row->nama }}</td>
-                                                    <td>{{ $row->description }}</td>
+                                                    <td>{{ $row->deskripsi }}</td>
                                                     <td>
                                                         <form action="{{ route('kategori.destroy', $row->id) }}" method="POST">
                                                             @csrf
