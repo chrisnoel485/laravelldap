@@ -54,6 +54,7 @@
                                                 <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}">{{ $kategori->deskripsi }}</textarea>
                                             </div>
                                             <div class="card-footer">
+                                                <a href="{{ URL::to('kategori') }}" class="btn btn-outline-info">Kembali</a>
                                                 <button class="btn btn-info">Update</button>
                                             </div>
                                         </form>
