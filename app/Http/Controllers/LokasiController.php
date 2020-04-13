@@ -147,5 +147,5 @@ class LokasiController extends Controller
         Session::flash('message','Succes Delete Lokasi');
 	    return redirect('/lokasi');
     }
-    }
+
 }
