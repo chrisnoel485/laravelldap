@@ -55,8 +55,8 @@ class KategoriController extends Controller
         }else{
 
             DB::table('kategoris')->insert([
-                'nama' => $request->hostname,
-                'deskripsi' => $request->sn,
+                'nama' => $request->nama,
+                'deskripsi' => $request->deskripsi,
             ]);
             
  
