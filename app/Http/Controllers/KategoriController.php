@@ -91,8 +91,10 @@ class KategoriController extends Controller
     public function edit($id)
     {
         //
-        $kategori = DB::table('kategoris')->where('id',$id)->get();
-	    return view('kategori/edit',['kategoris' => $kategori]);
+        $kategori = Kategori::findOrFail($id);
+        return view('kategori.edit', compact('kategori'));
+       // $kategori = DB::table('kategoris')->where('id',$id)->get();
+	   // return view('kategori/edit',['kategoris' => $kategori]);
     }
 
     /**
@@ -116,7 +118,9 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         //
-        DB::table('kategoris')->where('id',$id)->delete();
+        $kategori = Kategori::findOrFail($id);
+        $kategori->delete();
+        //DB::table('kategoris')->where('id',$id)->delete();
 
         Session::flash('message','Succes Delete Kategori');
 	    return redirect('/kategori');
