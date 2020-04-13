@@ -91,8 +91,8 @@ class KategoriController extends Controller
     public function edit($id)
     {
         //
-        $kategori = Kategori::findOrFail($id);
-        return view('kategori.edit', compact('kategori'));
+        $kategori = DB::table('kategoris')->where('id',$id)->get();
+	    return view('kategori/edit',['servers' => $kategori]);
     }
 
     /**
