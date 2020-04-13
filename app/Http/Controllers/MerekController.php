@@ -25,6 +25,7 @@ class MerekController extends Controller
     public function create()
     {
         //
+        return view ('merek/create');
     }
 
     /**
@@ -36,6 +37,31 @@ class MerekController extends Controller
     public function store(Request $request)
     {
         //
+        $rules =[
+            'nama'=>'required',
+        ];
+ 
+        $validator = Validator::make($rules, [
+            'nama.required'=>'Nama Merek Tidak Boleh Kosong',
+        ]);
+        if ($validator->fails()) {
+ 
+            //refresh halaman
+            return Redirect::to('merek/create')
+            ->withErrors($validator);
+ 
+        }else{
+
+            DB::table('mereks')->insert([
+                'nama' => $request->nama,
+                'deskripsi' => $request->deskripsi,
+            ]);
+            
+ 
+            Session::flash('message','Succes Add Merek');
+ 
+            return redirect('/merek');
+        }
     }
 
     /**
@@ -55,9 +81,11 @@ class MerekController extends Controller
      * @param  \App\Merek  $merek
      * @return \Illuminate\Http\Response
      */
-    public function edit(Merek $merek)
+    public function edit( $id)
     {
         //
+        $merek = Merek::findOrFail($id);
+        return view('merek.edit', compact('merek'));
     }
 
     /**
@@ -67,9 +95,34 @@ class MerekController extends Controller
      * @param  \App\Merek  $merek
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Merek $merek)
+    public function update(Request $request, $id)
     {
         //
+        $rules =[
+            'nama'=>'required',
+        ];
+ 
+        $validator = Validator::make($rules, [
+            'nama.required'=>'Nama Merek Tidak Boleh Kosong',
+        ]);
+        if ($validator->fails()) {
+ 
+            //refresh halaman
+            return Redirect::to('merek.edit')
+            ->withErrors($validator);
+ 
+        }else{
+            $merek = Merek::findOrFail($id);
+            $merek->update([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi
+            ]);
+            
+ 
+            Session::flash('message','Succes Edit Merek');
+ 
+            return redirect('/merek');
+        }
     }
 
     /**
@@ -78,8 +131,13 @@ class MerekController extends Controller
      * @param  \App\Merek  $merek
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Merek $merek)
+    public function destroy( $id)
     {
         //
+        $merek = Merek::findOrFail($id);
+        $merek->delete();
+
+        Session::flash('message','Succes Delete Merek');
+	    return redirect('/merek');
     }
 }

@@ -22,3 +22,6 @@ Route::resource('/kategori', 'KategoriController')->except([
 Route::resource('/lokasi', 'LokasiController')->except([
     'show'
 ]);
+Route::resource('/merek', 'MerekController')->except([
+    'show'
+]);
