@@ -138,7 +138,7 @@ class LokasiController extends Controller
      * @param  \App\Lokasi  $lokasi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lokasi $lokasi)
+    public function destroy( $id)
     {
         //
         $lokasi = Lokasi::findOrFail($id);
