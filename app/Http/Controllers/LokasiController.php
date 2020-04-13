@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Lokasi;
 use Illuminate\Http\Request;
+use Redirect;
+use Session;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Input;
 
 class LokasiController extends Controller
 {
@@ -39,6 +44,31 @@ class LokasiController extends Controller
     public function store(Request $request)
     {
         //
+        $rules =[
+            'nama'=>'required',
+        ];
+ 
+        $validator = Validator::make($rules, [
+            'nama.required'=>'Nama Lokasi Tidak Boleh Kosong',
+        ]);
+        if ($validator->fails()) {
+ 
+            //refresh halaman
+            return Redirect::to('lokasi/create')
+            ->withErrors($validator);
+ 
+        }else{
+
+            DB::table('lokasis')->insert([
+                'nama' => $request->nama,
+                'deskripsi' => $request->deskripsi,
+            ]);
+            
+ 
+            Session::flash('message','Succes Add Lokasi');
+ 
+            return redirect('/lokasi');
+        }
     }
 
     /**
