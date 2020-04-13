@@ -30,7 +30,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">List Lokasi</h3>
                                 <div class="card-tools">
-                                    <a href="{{ URL::to('/kategori/create')}}" class="btn btn-tool">
+                                    <a href="{{ URL::to('/lokasi/create')}}" class="btn btn-tool">
                                         <i class="fa fa-plus"></i>
                                         &nbsp; Tambah
                                     </a>
