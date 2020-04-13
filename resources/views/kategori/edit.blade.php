@@ -43,7 +43,8 @@
                                             {{ csrf_field() }}
                                             <div class="card-body">
                                                 <div class="row">
-                                                    <div class="col-md-6">  
+                                                    <div class="col-md-6"> 
+                                                    <input type="hidden" name="id" value="{{ $kategori->id }}"> 
                                                         <div class="form-group">
                                                             <label for="nama">Nama Kategori</label>
                                                             <input type="text" value="{{ $kategori->nama }}" name="nama" placeholder="Masukkan Nama Kategori" class="form-control" >
