@@ -39,7 +39,7 @@
                                 @endif
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <form action="{{ route('kategori.update', $kategori->id) }}" method="POST">
+                                        <form action="{{ route('kategori.update', $kategori->id) }}" method="PUT">
                                             {{ csrf_field() }}
                                             <div class="card-body">
                                                 <div class="row">
