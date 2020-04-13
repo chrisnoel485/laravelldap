@@ -45,7 +45,7 @@
                                             <div class="form-group">
                                                 <label for="nama">Kategori</label>
                                                 <input type="text" 
-                                                    name="name"
+                                                    name="nama"
                                                     value="{{ $kategori->nama }}"
                                                     class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}" id="nama" required>
                                             </div>
