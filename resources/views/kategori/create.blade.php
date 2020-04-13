@@ -24,27 +24,48 @@
 ​
         <section class="content">
             <div class="container-fluid">
-                <form action="{{ route('kategori.store') }}" method="POST">
-                    {{ csrf_field() }}
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">  
-                                <div class="form-group">
-                                    <label for="nama">Nama Kategori</label>
-                                    <input type="text" name="hostname" placeholder="Masukkan Hostname Server" class="form-control" >
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Add Kategori</h3>
+                            </div>
+                            <div class="card-body">
+                                @if (Session::has('message'))
+                                <div id="alert-msg" class="alert alert-success alert-dismissible">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        {{ Session::get('message') }}
                                 </div>
-                                <div class="form-group">
-                                    <label for="deskripsi">Deskripsi</label>
-                                    <input type="text" name="sn" placeholder="Masukkan Serial Number Server" class="form-control" >
+                                @endif
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form action="{{ route('kategori.store') }}" method="POST">
+                                            {{ csrf_field() }}
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">  
+                                                        <div class="form-group">
+                                                            <label for="nama">Nama Kategori</label>
+                                                            <input type="text" name="hostname" placeholder="Masukkan Hostname Server" class="form-control" >
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="deskripsi">Deskripsi</label>
+                                                            <input type="text" name="sn" placeholder="Masukkan Serial Number Server" class="form-control" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <a href="{{ URL::to('kategori') }}" class="btn btn-outline-info">Kembali</a>
+                                                <input type="submit" value="Proses" class="btn btn-primary pull-right">
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card-footer">
-                        <a href="{{ URL::to('kategori') }}" class="btn btn-outline-info">Kembali</a>
-                        <input type="submit" value="Proses" class="btn btn-primary pull-right">
-                    </div>
-                </form>
+                </div>
             </div>
         </section>
     </div>
