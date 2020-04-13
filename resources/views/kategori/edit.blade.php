@@ -39,26 +39,23 @@
                                 @endif
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <form action="{{ route('kategori.update', $kategori->id) }}" method="PUT">
-                                            {{ csrf_field() }}
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-md-6"> 
-                                                    <input type="hidden" name="id" value="{{ $kategori->id }}"> 
-                                                        <div class="form-group">
-                                                            <label for="nama">Nama Kategori</label>
-                                                            <input type="text" value="{{ $kategori->nama }}" name="nama" placeholder="Masukkan Nama Kategori" class="form-control" >
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="deskripsi">Deskripsi</label>
-                                                            <input type="text" value="{{ $kategori->deskripsi }}" name="deskripsi" placeholder="Masukkan Deskripsi Kategori" class="form-control" >
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                        <form role="form" action="{{ route('kategori.update', $kategori->id) }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="_method" value="PUT">
+                                            <div class="form-group">
+                                                <label for="name">Kategori</label>
+                                                <input type="text" 
+                                                    name="nama"
+                                                    value="{{ $kategori->nama }}"
+                                                    class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}" id="nama" required>
                                             </div>
+                                            <div class="form-group">
+                                                <label for="deskripsi">Deskripsi</label>
+                                                <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}">{{ $kategori->deskripsi }}</textarea>
+                                            </div>
+                                            @slot('footer')
                                             <div class="card-footer">
-                                                <a href="{{ URL::to('kategori') }}" class="btn btn-outline-info">Kembali</a>
-                                                <input type="submit" value="Update" class="btn btn-primary pull-right">
+                                                <button class="btn btn-info">Update</button>
                                             </div>
                                         </form>
                                     </div>
