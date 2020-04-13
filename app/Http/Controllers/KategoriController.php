@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Kategori;
 use Illuminate\Http\Request;
+use Redirect;
+use Session;
+use Illuminate\Support\Facades\DB;
 
 class KategoriController extends Controller
 {
@@ -39,6 +42,28 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'nama' => 'required|string|max:50',
+            'deskripsi' => 'nullable|string'
+        ]);
+        if ($validator->fails()) {
+ 
+            //refresh halaman
+            return Redirect::to('kategori/create')
+            ->withErrors($validator);
+ 
+        }else{
+
+            DB::table('kategoris')->insert([
+                'nama' => $request->hostname,
+                'deskripsi' => $request->sn,
+            ]);
+            
+ 
+            Session::flash('message','Succes Add Server');
+ 
+            return redirect('/kategori');
+        }
     }
 
     /**
