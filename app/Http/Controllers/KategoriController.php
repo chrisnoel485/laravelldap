@@ -44,9 +44,12 @@ class KategoriController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
-            'nama' => 'required|string|max:50',
-            'deskripsi' => 'nullable|string'
+        $rules =[
+            'nama'=>'required',
+        ];
+ 
+        $validator = Validator::make($rules, [
+            'nama.required'=>'Nama Kategori Tidak Boleh Kosong',
         ]);
         if ($validator->fails()) {
  
