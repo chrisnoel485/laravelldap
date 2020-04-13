@@ -88,9 +88,11 @@ class LokasiController extends Controller
      * @param  \App\Lokasi  $lokasi
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lokasi $lokasi)
+    public function edit( $id)
     {
         //
+        $lokasi = Lokasi::findOrFail($id);
+        return view('lokasi.edit', compact('lokasi'));
     }
 
     /**
@@ -100,9 +102,34 @@ class LokasiController extends Controller
      * @param  \App\Lokasi  $lokasi
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lokasi $lokasi)
+    public function update(Request $request, $id)
     {
         //
+        $rules =[
+            'nama'=>'required',
+        ];
+ 
+        $validator = Validator::make($rules, [
+            'nama.required'=>'Nama Lokasi Tidak Boleh Kosong',
+        ]);
+        if ($validator->fails()) {
+ 
+            //refresh halaman
+            return Redirect::to('lokasi.edit')
+            ->withErrors($validator);
+ 
+        }else{
+            $lokasi = Lokasi::findOrFail($id);
+            $lokasi->update([
+            'nama' => $request->nama,
+            'deskripsi' => $request->deskripsi
+            ]);
+            
+ 
+            Session::flash('message','Succes Edit Lokasi');
+ 
+            return redirect('/lokasi');
+        }
     }
 
     /**
@@ -114,5 +141,11 @@ class LokasiController extends Controller
     public function destroy(Lokasi $lokasi)
     {
         //
+        $lokasi = Lokasi::findOrFail($id);
+        $lokasi->delete();
+
+        Session::flash('message','Succes Delete Lokasi');
+	    return redirect('/lokasi');
+    }
     }
 }
