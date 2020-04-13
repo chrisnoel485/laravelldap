@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::resource('/kategori', 'KategoriController')->except([
     'show'
 ]);
+Route::resource('/lokasi', 'LokasiController')->except([
+    'show'
+]);

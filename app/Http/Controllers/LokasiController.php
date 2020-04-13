@@ -15,6 +15,8 @@ class LokasiController extends Controller
     public function index()
     {
         //
+        $lokasi = Lokasi::orderBy('created_at', 'DESC')->paginate(10);
+        return view('lokasi.index', compact('lokasi'));
     }
 
     /**
@@ -25,6 +27,7 @@ class LokasiController extends Controller
     public function create()
     {
         //
+        return view ('lokasi/create');
     }
 
     /**
