@@ -43,9 +43,9 @@
                                             @csrf
                                             <input type="hidden" name="_method" value="PUT">
                                             <div class="form-group">
-                                                <label for="name">Kategori</label>
+                                                <label for="nama">Kategori</label>
                                                 <input type="text" 
-                                                    name="nama"
+                                                    name="name"
                                                     value="{{ $kategori->nama }}"
                                                     class="form-control {{ $errors->has('nama') ? 'is-invalid':'' }}" id="nama" required>
                                             </div>
@@ -53,7 +53,6 @@
                                                 <label for="deskripsi">Deskripsi</label>
                                                 <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" class="form-control {{ $errors->has('deskripsi') ? 'is-invalid':'' }}">{{ $kategori->deskripsi }}</textarea>
                                             </div>
-                                            @slot('footer')
                                             <div class="card-footer">
                                                 <button class="btn btn-info">Update</button>
                                             </div>
