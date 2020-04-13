@@ -50,7 +50,8 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="deskripsi">Deskripsi</label>
-                                                            <textarea type="text" name="deskripsi" placeholder="Masukkan Deskripsi Kategori" class="form-control" >
+                                                            <input type="text" name="deskripsi" placeholder="Masukkan Deskripsi Kategori" class="form-control" >
+                                                            <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" placeholder="Masukkan Deskripsi Kategori" class="form-control"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
