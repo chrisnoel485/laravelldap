@@ -92,7 +92,7 @@ class KategoriController extends Controller
     {
         //
         $kategori = DB::table('kategoris')->where('id',$id)->get();
-	    return view('kategori/edit',['servers' => $kategori]);
+	    return view('kategori/edit',['kategoris' => $kategori]);
     }
 
     /**
