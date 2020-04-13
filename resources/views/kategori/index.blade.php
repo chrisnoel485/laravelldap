@@ -61,13 +61,10 @@
                                                     <td class="text-center">{{ $no++ }}</td>
                                                     <td>{{ $row->nama }}</td>
                                                     <td>{{ $row->deskripsi }}</td>
-                                                    <td>
-                                                        <form action="{{ route('kategori.destroy', $row->id) }}" method="POST">
-                                                            @csrf
-                                                            <input type="hidden" name="_method" value="DELETE">
-                                                            <a class="btn btn-info" href="/kategori/edit/{{ $kategoris->id }}"><i class="fa fa-eye"></i></a>
-                                                            <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
-                                                        </form>
+                                                    <td class="text-center">
+                                                        <a class="btn btn-info" href="/server/edit/{{ $server->id }}"><i class="fa fa-eye"></i></a>
+                                                        | 
+                                                        <a class="btn btn-danger" href="/kategori/hapus/{{ $kategori->id }}"><i class="fa fa-trash"></i></a>
                                                     </td>
                                                 </tr>
                                                 @empty

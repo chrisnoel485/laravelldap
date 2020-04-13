@@ -116,8 +116,8 @@ class KategoriController extends Controller
     public function destroy($id)
     {
         //
-        $kategori = Kategori::findOrFail($id);
-        $kategori->delete();
+        DB::table('kategoris')->where('id',$id)->delete();
+
         Session::flash('message','Succes Delete Kategori');
 	    return redirect('/kategori');
     }
