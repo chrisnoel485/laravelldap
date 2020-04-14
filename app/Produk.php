@@ -14,7 +14,7 @@ class Produk extends Model
         }
     public function lokasi()
         {
-           return $this->belongsTo(Lokasi::class);\
+           return $this->belongsTo(Lokasi::class);
         }
     public function merek()
         {
