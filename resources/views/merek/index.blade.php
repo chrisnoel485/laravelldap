@@ -48,10 +48,10 @@
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <td>No</td>
-                                                    <td>Merek</td>
-                                                    <td>Deskripsi</td>
-                                                    <td>Aksi</td>
+                                                    <td class="text-center">No</td>
+                                                    <td class="text-center">Merek</td>
+                                                    <td class="text-center">Deskripsi</td>
+                                                    <td class="text-center">Aksi</td>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -59,9 +59,9 @@
                                                 @forelse ($merek as $row)
                                                 <tr>
                                                     <td class="text-center">{{ $no++ }}</td>
-                                                    <td>{{ $row->nama }}</td>
-                                                    <td>{{ $row->deskripsi }}</td>
-                                                    <td>
+                                                    <td class="text-center">{{ $row->nama }}</td>
+                                                    <td class="text-center">{{ $row->deskripsi }}</td>
+                                                    <td class="text-center">
                                                         <form action="{{ route('merek.destroy', $row->id) }}" method="POST">
                                                             @csrf
                                                             <input type="hidden" name="_method" value="DELETE">

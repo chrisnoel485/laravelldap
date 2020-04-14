@@ -48,10 +48,10 @@
                                         <table class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
-                                                    <td>No</td>
-                                                    <td>Kategori</td>
-                                                    <td>Deskripsi</td>
-                                                    <td>Aksi</td>
+                                                    <td class="text-center">No</td>
+                                                    <td class="text-center">Kategori</td>
+                                                    <td class="text-center">Deskripsi</td>
+                                                    <td class="text-center">Aksi</td>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -59,9 +59,9 @@
                                                 @forelse ($kategori as $row)
                                                 <tr>
                                                     <td class="text-center">{{ $no++ }}</td>
-                                                    <td>{{ $row->nama }}</td>
-                                                    <td>{{ $row->deskripsi }}</td>
-                                                    <td>
+                                                    <td class="text-center">{{ $row->nama }}</td>
+                                                    <td class="text-center">{{ $row->deskripsi }}</td>
+                                                    <td class="text-center">
                                                         <form action="{{ route('kategori.destroy', $row->id) }}" method="POST">
                                                             @csrf
                                                             <input type="hidden" name="_method" value="DELETE">
