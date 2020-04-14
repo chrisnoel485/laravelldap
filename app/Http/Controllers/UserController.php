@@ -83,7 +83,7 @@ class UserController extends Controller
         $hasPermission = null;
         
         //Mengambil data role
-        $roles = Role::all()->pluck('name');
+        $role = Role::all()->pluck('name');
         
         //apabila parameter role terpenuhi
         if (!empty($role)) {
