@@ -136,9 +136,56 @@ class ProdukController extends Controller
      * @param  \App\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Produk $produk)
+    public function update(Request $request,  $id)
     {
         //
+        $rules =[
+            'nama'=>'required',
+            'sn'=>'required',
+            'deskripsi'=>'required',
+            'kategori_id'=>'required',
+            'lokasi_id'=>'required',
+            'merek_id'=>'required',
+            'tahun'=>'required',
+            'expired'=>'required',
+
+
+        ];
+ 
+        $validator = Validator::make($rules, [
+            'nama.required'=>'Nama Produk Tidak Boleh Kosong',
+            'sn.required'=>'Serial Number Tidak Boleh Kosong',
+            'deskripsi.required'=>'Deskripsi Tidak Boleh Kosong',
+            'kategori_id.required'=>'Kategori Produk Tidak Boleh Kosong',
+            'lokasi_id.required'=>'Lokasi Produk Tidak Boleh Kosong',
+            'merek_id.required'=>'Merek Produk Tidak Boleh Kosong',
+            'tahun.required'=>'Tahun Produk Tidak Boleh Kosong',
+            'expired.required'=>'Expired Produk Tidak Boleh Kosong',
+        ]);
+        if ($validator->fails()) {
+ 
+            //refresh halaman
+            return Redirect::to('produk.edit')
+            ->withErrors($validator);
+ 
+        }else{
+            $produk = Produk::findOrFail($id);
+            $produk->update([
+                'nama' => $request->nama,
+                'sn' => $request->sn,
+                'deskripsi' => $request->deskripsi,
+                'kategori_id' => $request->kategori_id,
+                'lokasi_id' => $request->lokasi_id,
+                'merek_id' => $request->merek_id,
+                'tahun' => $request->tahun,
+                'expired' => $request->expired,
+            ]);
+            
+ 
+            Session::flash('message','Succes Edit Produk');
+ 
+            return redirect('/produk');
+        }
     }
 
     /**
