@@ -42,15 +42,60 @@
                                         <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             <div class="form-group">
-                                                            <label for="nama">Nama Kategori</label>
-                                                            <input type="text" name="nama" placeholder="Masukkan Nama Kategori" class="form-control" >
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="deskripsi">Deskripsi</label>
-                                                            <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" placeholder="Masukkan Deskripsi Kategori" class="form-control"></textarea>
-                                                        </div>
+                                                <label for="nama">Nama Produk</label>
+                                                    <input type="text" name="nama" placeholder="Masukkan Nama Kategori" class="form-control" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sn">Serial Number Produk</label>
+                                                    <input type="text" name="sn" placeholder="Masukkan Serial Number Produk" class="form-control" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="deskripsi">Deskripsi</label>
+                                                <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" placeholder="Masukkan Deskripsi Kategori" class="form-control"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Kategori Produk</label>
+                                                <select name="kategori_id" id="kategori_id" 
+                                                    required class="form-control {{ $errors->has('price') ? 'is-invalid':'' }}">
+                                                    <option value="">Pilih</option>
+                                                    @foreach ($kategori as $row)
+                                                        <option value="{{ $row->id }}">{{ ucfirst($row->nama) }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <p class="text-danger">{{ $errors->first('kategori_id') }}</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Lokasi Produk</label>
+                                                <select name="lokasi_id" id="lokasi_id" 
+                                                    required class="form-control {{ $errors->has('price') ? 'is-invalid':'' }}">
+                                                    <option value="">Pilih</option>
+                                                    @foreach ($lokasi as $row)
+                                                        <option value="{{ $row->id }}">{{ ucfirst($row->nama) }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <p class="text-danger">{{ $errors->first('lokasi_id') }}</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Merek Produk</label>
+                                                <select name="merek_id" id="merek_id" 
+                                                    required class="form-control {{ $errors->has('price') ? 'is-invalid':'' }}">
+                                                    <option value="">Pilih</option>
+                                                    @foreach ($merek as $row)
+                                                        <option value="{{ $row->id }}">{{ ucfirst($row->nama) }}</option>
+                                                    @endforeach
+                                                </select>
+                                                <p class="text-danger">{{ $errors->first('merek_id') }}</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tahun">Tahun Produk</label>
+                                                    <input type="text" name="tahun" placeholder="Masukkan Tahun Kategori" class="form-control" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="expired">Expired Produk</label>
+                                                    <input type="text" name="expired" placeholder="Masukkan Expired Produk" class="form-control" >
+                                            </div>
                                             <div class="card-footer">
-                                                <a href="{{ URL::to('kategori') }}" class="btn btn-outline-info">Kembali</a>
+                                                <a href="{{ URL::to('produk') }}" class="btn btn-outline-info">Kembali</a>
                                                 <input type="submit" value="Proses" class="btn btn-primary pull-right">
                                             </div>
                                         </form>

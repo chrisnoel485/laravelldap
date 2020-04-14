@@ -17,7 +17,7 @@ class CreateProduksTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->string('sn')->unique();
-            $table->string('description')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->integer('kategori_id')->unsigned();;
             $table->integer('lokasi_id')->unsigned();;
             $table->integer('merek_id')->unsigned();;
