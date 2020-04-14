@@ -89,6 +89,9 @@
                                                 @endforelse
                                             </tbody>
                                         </table>
+                                        <div>
+                                            {{ $produk->links() }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
