@@ -43,7 +43,7 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="name">Nama Role</label>
-                                                    <input type="text" name="name" placeholder="Masukkan Nama Produk" class="form-control" >
+                                                    <input type="text" name="name" placeholder="Masukkan Nama Role" class="form-control" >
                                             </div>
                                             <div class="card-footer">
                                                 <a href="{{ URL::to('role') }}" class="btn btn-outline-info">Kembali</a>
