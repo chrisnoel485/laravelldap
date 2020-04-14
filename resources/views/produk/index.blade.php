@@ -30,7 +30,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">List Produk</h3>
                                 <div class="card-tools">
-                                    <a href="{{ URL::to('/kategori/create')}}" class="btn btn-tool">
+                                    <a href="{{ URL::to('/produk/create')}}" class="btn btn-tool">
                                         <i class="fa fa-plus"></i>
                                         &nbsp; Tambah
                                     </a>
@@ -62,7 +62,7 @@
                                             </thead>
                                             <tbody>
                                                 @php $no = 1; @endphp
-                                                @forelse ($kategori as $row)
+                                                @forelse ($produk as $row)
                                                 <tr>
                                                     <td class="text-center">{{ $no++ }}</td>
                                                     <td>{{ $row->nama }}</td>
@@ -74,10 +74,10 @@
                                                     <td>{{ $row->tahun }}</td>
                                                     <td>{{ $row->expired }}</td>
                                                     <td class="text-center">
-                                                        <form action="{{ route('kategori.destroy', $row->id) }}" method="POST">
+                                                        <form action="{{ route('produk.destroy', $row->id) }}" method="POST">
                                                             @csrf
                                                             <input type="hidden" name="_method" value="DELETE">
-                                                            <a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                                            <a href="{{ route('produk.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                                             <button class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
                                                         </form>
                                                     </td>
