@@ -25,3 +25,4 @@ Route::resource('/lokasi', 'LokasiController')->except([
 Route::resource('/merek', 'MerekController')->except([
     'show'
 ]);
+Route::resource('/produk', 'ProdukController');
