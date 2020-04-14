@@ -66,7 +66,7 @@
                                                     required class="form-control {{ $errors->has('price') ? 'is-invalid':'' }}">
                                                     <option value="">Pilih</option>
                                                     @foreach ($kategori as $row)
-                                                        <option value="{{ $row->id }}" {{ $row->id == $product->kategori_id ? 'selected':'' }}>
+                                                        <option value="{{ $row->id }}" {{ $row->id == $produk->kategori_id ? 'selected':'' }}>
                                                             {{ ucfirst($row->nama) }}
                                                         </option>
                                                     @endforeach
