@@ -14,19 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
-Route::resource('/kategori', 'KategoriController')->except([
-    'show'
-]);
-Route::resource('/lokasi', 'LokasiController')->except([
-    'show'
-]);
-Route::resource('/merek', 'MerekController')->except([
-    'show'
-]);
-Route::resource('/produk', 'ProdukController');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'auth'], function() {
+    Route::resource('/kategori', 'KategoriController')->except([
+        'show'
+    ]);
+    Route::resource('/lokasi', 'LokasiController')->except([
+        'show'
+    ]);
+    Route::resource('/merek', 'MerekController')->except([
+        'show'
+    ]);
+    Route::resource('/produk', 'ProdukController');
+    Route::get('/home', 'HomeController@index')->name('home');
+});
+
+
+
+
+
+
