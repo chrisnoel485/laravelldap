@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Produk;
 use Illuminate\Http\Request;
+use App\Kategori;
+use App\Lokasi;
+use App\Merek;
+
 
 class ProdukController extends Controller
 {
@@ -27,6 +31,10 @@ class ProdukController extends Controller
     public function create()
     {
         //
+        $kategori = Kategori::orderBy('nama', 'ASC')->get();
+        $lokasi = Lokasi::orderBy('nama', 'ASC')->get();
+        $merek = Merek::orderBy('nama', 'ASC')->get();
+        return view('produk.create', compact('kategori','lokasi','merek'));
     }
 
     /**

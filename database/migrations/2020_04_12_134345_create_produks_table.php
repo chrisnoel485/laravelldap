@@ -16,7 +16,7 @@ class CreateProduksTable extends Migration
         Schema::create('produks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama');
-            $table->string('sn');
+            $table->string('sn')->unique();
             $table->string('description')->nullable();
             $table->integer('kategori_id')->unsigned();;
             $table->integer('lokasi_id')->unsigned();;
