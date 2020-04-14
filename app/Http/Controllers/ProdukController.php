@@ -119,9 +119,14 @@ class ProdukController extends Controller
      * @param  \App\Produk  $produk
      * @return \Illuminate\Http\Response
      */
-    public function edit(Produk $produk)
+    public function edit( $id)
     {
         //
+        $produk = Produk::findOrFail($id);
+        $kategori = Kategori::orderBy('nama', 'ASC')->get();
+        $lokasi = Lokasi::orderBy('nama', 'ASC')->get();
+        $merek = Merek::orderBy('nama', 'ASC')->get();
+        return view('produk.edit', compact('produk', 'kategori','lokasi','merek'));
     }
 
     /**
@@ -147,7 +152,7 @@ class ProdukController extends Controller
         //
         $produk = Produk::findOrFail($id);
         $produk->delete();
-        
+
         Session::flash('message','Succes Delete Produk');
 	    return redirect('/produk');
     }
