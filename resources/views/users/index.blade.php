@@ -29,7 +29,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">List Role</h3>
                                 <div class="card-tools">
-                                    <a href="{{ URL::to('users.create')}}" class="btn btn-primary btn-sm">
+                                    <a href="{{ URL::to('users/create')}}" class="btn btn-primary btn-sm">
                                         <i class="fa fa-plus"></i>
                                         &nbsp; Tambah
                                     </a>
@@ -59,7 +59,7 @@
                                                 @php $no = 1; @endphp
                                                 @forelse ($users as $row)
                                                 <tr>
-                                                    <td>{{ $no++ }}</td>
+                                                    <td class="text-center">{{ $no++ }}</td>
                                                     <td>{{ $row->name }}</td>
                                                     <td>{{ $row->email }}</td>
                                                     <td>
@@ -74,7 +74,7 @@
                                                         <label for="" class="badge badge-default">Suspend</label>
                                                         @endif
                                                     </td>
-                                                    <td>
+                                                    <td class="text-center">
                                                         <form action="{{ route('users.destroy', $row->id) }}" method="POST">
                                                             @csrf
                                                             <input type="hidden" name="_method" value="DELETE">
