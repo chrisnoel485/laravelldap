@@ -79,7 +79,7 @@
                                                     required class="form-control {{ $errors->has('price') ? 'is-invalid':'' }}">
                                                     <option value="">Pilih</option>
                                                     @foreach ($lokasi as $row)
-                                                        <option value="{{ $row->id }}" {{ $row->id == $product->lokasi_id ? 'selected':'' }}>
+                                                        <option value="{{ $row->id }}" {{ $row->id == $produk->lokasi_id ? 'selected':'' }}>
                                                             {{ ucfirst($row->nama) }}
                                                         </option>
                                                     @endforeach
@@ -92,7 +92,7 @@
                                                     required class="form-control {{ $errors->has('price') ? 'is-invalid':'' }}">
                                                     <option value="">Pilih</option>
                                                     @foreach ($merek as $row)
-                                                        <option value="{{ $row->id }}" {{ $row->id == $product->merek_id ? 'selected':'' }}>
+                                                        <option value="{{ $row->id }}" {{ $row->id == $produk->merek_id ? 'selected':'' }}>
                                                             {{ ucfirst($row->nama) }}
                                                         </option>
                                                     @endforeach
