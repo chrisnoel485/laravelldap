@@ -92,7 +92,7 @@
                                             </tbody>
                                         </table>
                                         <div>
-                                            {{ $role->links() }}
+                                            {{ $users->links() }}
                                         </div>
                                     </div>
                                 </div>
