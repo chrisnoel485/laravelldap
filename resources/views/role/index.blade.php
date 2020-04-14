@@ -57,7 +57,7 @@
                                             </thead>
                                             <tbody>
                                                 @php $no = 1; @endphp
-                                                @forelse ($produk as $row)
+                                                @forelse ($role as $row)
                                                 <tr>
                                                     <td class="text-center">{{ $no++ }}</td>
                                                         <td>{{ $row->name }}</td>
