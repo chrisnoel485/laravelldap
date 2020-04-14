@@ -49,8 +49,8 @@
                                             <thead>
                                                 <tr>
                                                     <td class="text-center">No</td>
-                                                    <td class="text-center">Lokasi</td>
-                                                    <td class="text-center">Deskripsi</td>
+                                                    <td>Lokasi</td>
+                                                    <td>Deskripsi</td>
                                                     <td class="text-center">Aksi</td>
                                                 </tr>
                                             </thead>
@@ -59,8 +59,8 @@
                                                 @forelse ($lokasi as $row)
                                                 <tr>
                                                     <td class="text-center">{{ $no++ }}</td>
-                                                    <td class="text-center">{{ $row->nama }}</td>
-                                                    <td class="text-center">{{ $row->deskripsi }}</td>
+                                                    <td>{{ $row->nama }}</td>
+                                                    <td>{{ $row->deskripsi }}</td>
                                                     <td class="text-center">
                                                         <form action="{{ route('lokasi.destroy', $row->id) }}" method="POST">
                                                             @csrf
