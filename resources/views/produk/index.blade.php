@@ -57,7 +57,7 @@
                                                     <td>Merek Produk</td>
                                                     <td>Tahun Produk</td>
                                                     <td>Expired Warranty</td>
-                                                    <td>Aksi</td>
+                                                    <td class="text-center">Aksi</td>
                                                 </tr>
                                             </thead>
                                             <tbody>
