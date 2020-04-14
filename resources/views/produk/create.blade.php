@@ -39,7 +39,7 @@
                                 @endif
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <form action="{{ route('produk.store') }}" method="POST" enctype="multipart/form-data">
+                                        <form action="{{ route('produk.store') }}" method="POST">
                                             @csrf
                                             <div class="form-group">
                                                 <label for="nama">Nama Produk</label>
