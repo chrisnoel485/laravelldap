@@ -67,8 +67,8 @@
                                                     <td class="text-center">{{ $no++ }}</td>
                                                     <td>{{ $row->nama }}</td>
                                                     <td>{{ $row->sn }}</td>
-                                                    <td>{{ $row->description }}</td>
-                                                    <td>{{ $row->kategori_id }}</td>
+                                                    <td>{{ $row->deskripsi }}</td>
+                                                    <td>{{ $row->kategori->nama }}</td>
                                                     <td>{{ $row->lokasi_id }}</td>
                                                     <td>{{ $row->merek_id }}</td>
                                                     <td>{{ $row->tahun }}</td>

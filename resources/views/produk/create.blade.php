@@ -43,7 +43,7 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="nama">Nama Produk</label>
-                                                    <input type="text" name="nama" placeholder="Masukkan Nama Kategori" class="form-control" >
+                                                    <input type="text" name="nama" placeholder="Masukkan Nama Produk" class="form-control" >
                                             </div>
                                             <div class="form-group">
                                                 <label for="sn">Serial Number Produk</label>

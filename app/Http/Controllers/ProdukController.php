@@ -24,7 +24,9 @@ class ProdukController extends Controller
     public function index()
     {
         //
-        $produk = Produk::orderBy('created_at', 'DESC')->paginate(10);
+        //$produk = Produk::orderBy('created_at', 'DESC')->paginate(10);
+        //return view('produk.index', compact('produk'));
+        $products = Product::with('kategori','lokasi','merek')->orderBy('created_at', 'DESC')->paginate(10);
         return view('produk.index', compact('produk'));
     }
 
