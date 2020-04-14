@@ -26,3 +26,7 @@ Route::resource('/merek', 'MerekController')->except([
     'show'
 ]);
 Route::resource('/produk', 'ProdukController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
