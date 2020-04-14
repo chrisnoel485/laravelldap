@@ -51,7 +51,7 @@
                                                     <td class="text-center">No</td>
                                                     <td>Kategori</td>
                                                     <td>Deskripsi</td>
-                                                    <td>Aksi</td>
+                                                    <td class="text-center">Aksi</td>
                                                 </tr>
                                             </thead>
                                             <tbody>

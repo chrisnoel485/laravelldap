@@ -42,7 +42,7 @@
                                         <form action="{{ route('merek.store') }}" method="POST">
                                             @csrf
                                             <div class="form-group">
-                                                            <label for="nama">Nama Lokasi</label>
+                                                            <label for="nama">Nama Merek</label>
                                                             <input type="text" name="nama" placeholder="Masukkan Nama Merek" class="form-control" >
                                                         </div>
                                                         <div class="form-group">
