@@ -69,8 +69,8 @@
                                                     <td>{{ $row->sn }}</td>
                                                     <td>{{ $row->deskripsi }}</td>
                                                     <td>{{ $row->kategori->nama }}</td>
-                                                    <td>{{ $row->lokasi_id }}</td>
-                                                    <td>{{ $row->merek_id }}</td>
+                                                    <td>{{ $row->lokasi->nama }}</td>
+                                                    <td>{{ $row->merek->nama }}</td>
                                                     <td>{{ $row->tahun }}</td>
                                                     <td>{{ $row->expired }}</td>
                                                     <td class="text-center">
