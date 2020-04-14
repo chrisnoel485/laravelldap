@@ -77,6 +77,9 @@
                                                 @endforelse
                                             </tbody>
                                         </table>
+                                        <div>
+                                            {{ $merek->links() }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

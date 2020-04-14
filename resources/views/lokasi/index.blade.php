@@ -77,6 +77,9 @@
                                                 @endforelse
                                             </tbody>
                                         </table>
+                                        <div>
+                                            {{ $lokasi->links() }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

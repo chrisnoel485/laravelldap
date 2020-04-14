@@ -77,6 +77,9 @@
                                                 @endforelse
                                             </tbody>
                                         </table>
+                                        <div>
+                                            {{ $kategori->links() }}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
