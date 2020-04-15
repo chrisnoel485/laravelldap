@@ -29,6 +29,8 @@
                         </p>
                     </a>
                 </li>
+
+                @if (auth()->user()->can('show products') || auth()->user()->can('delete products') || auth()->user()->can('create products'))
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
@@ -64,6 +66,8 @@
                         </li>
                     </ul>
                 </li>
+                @endif
+                @role('admin')
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-users"></i>
@@ -93,6 +97,7 @@
                         </li>
                     </ul>
                 </li>
+                @endrole
                 <li class="nav-item has-treeview">
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
