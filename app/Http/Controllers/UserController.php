@@ -113,4 +113,10 @@ class UserController extends Controller
         return redirect()->back();
     }
     
+    public function roles(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+        $roles = Role::all()->pluck('name');
+        return view('users.roles', compact('user', 'roles'));
+    }
 }
