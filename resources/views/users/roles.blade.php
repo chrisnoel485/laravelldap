@@ -27,7 +27,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-6">
-                        <form action="{{ route('users.setrole', $user->id) }}" method="post">
+                        <form action="{{ route('users.setRole', $user->id) }}" method="post">
                             @csrf
                             <input type="hidden" name="_method" value="PUT">
                         @card
