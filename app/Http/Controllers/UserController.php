@@ -112,11 +112,34 @@ class UserController extends Controller
         ]);
         return redirect()->back();
     }
+    public function setRolePermission(Request $request, $role)
+    {
+        //select role berdasarkan namanya
+        $role = Role::findByName($role);
+        
+        //fungsi syncPermission akan menghapus semua permissio yg dimiliki role tersebut
+        //kemudian di-assign kembali sehingga tidak terjadi duplicate data
+        $role->syncPermissions($request->permission);
+        return redirect()->back()->with(['success' => 'Permission to Role Saved!']);
+    }
     
     public function roles(Request $request, $id)
     {
         $user = User::findOrFail($id);
         $roles = Role::all()->pluck('name');
         return view('users.roles', compact('user', 'roles'));
+    }
+
+    public function setRole(Request $request, $id)
+    {
+        $this->validate($request, [
+            'role' => 'required'
+        ]);
+        
+        $user = User::findOrFail($id);
+        //menggunakan syncRoles agar terlebih dahulu menghapus semua role yang dimiliki
+        //kemudian di-set kembali agar tidak terjadi duplicate
+        $user->syncRoles($request->role);
+        return redirect()->back()->with(['success' => 'Role Sudah Di Set']);
     }
 }
