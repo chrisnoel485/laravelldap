@@ -18,10 +18,16 @@ Route::get('/', function() {
 });
 Auth::routes();
 Route::group(['middleware' => 'auth'], function() {
-    Route::resource('/kategori', 'CategoryController')->except([
-        'create', 'show'
+    Route::resource('/kategori', 'KategoriController')->except([
+        'show'
     ]);
-    Route::resource('/produk', 'ProductController');
+    Route::resource('/lokasi', 'LokasiController')->except([
+        'show'
+    ]);
+    Route::resource('/merek', 'MerekController')->except([
+        'show'
+    ]);
+    Route::resource('/produk', 'ProdukController');
     Route::get('/home', 'HomeController@index')->name('home');
     
 });
