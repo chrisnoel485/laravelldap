@@ -23,11 +23,25 @@ class RoleController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required|string|max:50'
+        $rules =[
+            'name'=>'required',
+        ];
+ 
+        $validator = Validator::make($rules, [
+            'name.required'=>'Nama Role Tidak Boleh Kosong',
         ]);
-        
-        $role = Role::firstOrCreate(['name' => $request->name]);
-        return redirect()->back()->with(['success' => 'Role: <strong>' . $role->name . '</strong> Ditambahkan']);
+        if ($validator->fails()) {
+ 
+            //refresh halaman
+            return Redirect::to('role/create')
+            ->withErrors($validator);
+ 
+        }else{
+
+            $role = Role::firstOrCreate(['name' => $request->name]);
+            Session::flash('message','Succes Add Role');
+ 
+            return redirect('/role');
+        }
     }  
 }
