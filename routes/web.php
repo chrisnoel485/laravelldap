@@ -22,7 +22,7 @@ Route::group(['middleware' => 'auth'], function() {
     //yang memiliki role admin
     Route::group(['middleware' => ['role:admin']], function () {
         Route::resource('/role', 'RoleController')->except([
-            'create', 'show', 'edit', 'update'
+            'show', 'edit', 'update'
         ]);
         
         Route::resource('/users', 'UserController')->except([
@@ -39,8 +39,14 @@ Route::group(['middleware' => 'auth'], function() {
     //route yang berada dalam group ini, hanya bisa diakses oleh user
     //yang memiliki permission yang telah disebutkan dibawah
     Route::group(['middleware' => ['permission:show products|create products|delete products']], function() {
-        Route::resource('/kategori', 'CategoryController')->except([
-            'create', 'show'
+        Route::resource('/kategori', 'KategoriController')->except([
+            'show'
+        ]);
+        Route::resource('/lokasi', 'LokasiController')->except([
+            'show'
+        ]);
+        Route::resource('/merek', 'MerekController')->except([
+            'show'
         ]);
         Route::resource('/produk', 'ProductController');
     });
