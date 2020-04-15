@@ -11,8 +11,8 @@ class RoleController extends Controller
     //
     public function index()
     {
-        $users = User::orderBy('created_at', 'DESC')->paginate(10);
-        return view('users.index', compact('users'));
+        $role = Role::orderBy('created_at', 'DESC')->paginate(10);
+        return view('role.index', compact('role'));
     }
     
     public function create()
@@ -24,22 +24,11 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:100',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
-            'role' => 'required|string|exists:roles,name'
-        ]);
-
-        $user = User::firstOrCreate([
-            'email' => $request->email
-        ], [
-            'name' => $request->name,
-            'password' => bcrypt($request->password),
-            'status' => true
+            'name' => 'required|string|max:50'
         ]);
         
-        $user->assignRole($request->role);
-        return redirect(route('users.index'))->with(['success' => 'User: <strong>' . $user->name . '</strong> Ditambahkan']);
+        $role = Role::firstOrCreate(['name' => $request->name]);
+        return redirect()->back()->with(['success' => 'Role: <strong>' . $role->name . '</strong> Ditambahkan']);
     }
     
     public function edit($id)
