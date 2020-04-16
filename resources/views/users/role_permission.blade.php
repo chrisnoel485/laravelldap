@@ -59,24 +59,7 @@
                             <div class="card-header">        
                                 <h4 class="card-title">Set Permission to Role</h4>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12">
-                        <div class="card-header">        
-                            <h4 class="card-title">Set Permission to Role</h4>
-                        </div>
-                        @card
-                            @slot('title')
-                            Set Permission to Role
-                            @endslot
-​
-                            @if (session('success'))
-                                @alert(['type' => 'success'])
-                                    {{ session('success') }}
-                                @endalert
-                            @endif
-                            
+                            <div class="card-body">
                             <form action="{{ route('users.roles_permission') }}" method="GET">
                                 <div class="form-group">
                                     <label for="">Roles</label>
@@ -132,6 +115,14 @@
                                     </div>
                                 </form>
                             @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card-header">        
+                            <h4 class="card-title">Set Permission to Role</h4>
+                        </div>
                             @slot('footer')
                                
                             @endslot
