@@ -34,23 +34,26 @@
         <section class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-4">
-                            <h4 class="card-title">Add New Permission</h4>
-                            <form action="{{ route('users.add_permission') }}" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    <label for="">Name</label>
-                                    <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid':'' }}" required>
-                                    <p class="text-danger">{{ $errors->first('name') }}</p>
-                                </div>
-                                <div clasas="form-group">
-                                    <button class="btn btn-primary btn-sm">
-                                        Add New
-                                    </button>
-                                </div>
-                            </form>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">        
+                                <h4 class="card-title">Add New Permission</h4>
+                                <form action="{{ route('users.add_permission') }}" method="post">
+                                    @csrf
+                                    <div class="form-group">
+                                        <label for="">Name</label>
+                                        <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid':'' }}" required>
+                                        <p class="text-danger">{{ $errors->first('name') }}</p>
+                                    </div>
+                                    <div clasas="form-group">
+                                        <button class="btn btn-primary btn-sm">
+                                            Add New
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-​
                     <div class="col-md-8">
                         @card
                             @slot('title')
