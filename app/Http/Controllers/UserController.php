@@ -7,6 +7,8 @@ use Spatie\Permission\Models\Role;
 use App\User;
 use Spatie\Permission\Models\Permission;
 use DB;
+use Redirect;
+use Session;
 
 class UserController extends Controller
 {
