@@ -54,9 +54,12 @@
                                     </div>
                                 </form>
                             </div>
+                            <div class="card-header">        
+                                <h4 class="card-title">Set Permission to Role</h4>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-12">
                         @card
                             @slot('title')
                             Set Permission to Role
