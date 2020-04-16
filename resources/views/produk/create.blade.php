@@ -88,11 +88,17 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="tahun">Tahun Produk</label>
-                                                    <input type="text" name="tahun" placeholder="Masukkan Tahun Kategori" class="form-control" >
+                                                <input type="date" id="tahun" name="tahun"
+                                                    value="2018-07-22"
+                                                    min="2018-01-01" max="2018-12-31"
+                                                    class="form-control" >
                                             </div>
                                             <div class="form-group">
                                                 <label for="expired">Expired Produk</label>
-                                                    <input type="text" name="expired" placeholder="Masukkan Expired Produk" class="form-control" >
+                                                <input type="date" id="expired" name="expired"
+                                                    value="2018-07-22"
+                                                    min="2018-01-01" max="2018-12-31"
+                                                    class="form-control" >
                                             </div>
                                             <div class="card-footer">
                                                 <a href="{{ URL::to('produk') }}" class="btn btn-outline-info">Kembali</a>
