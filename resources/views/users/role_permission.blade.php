@@ -38,6 +38,8 @@
                         <div class="card">
                             <div class="card-header">        
                                 <h4 class="card-title">Add New Permission</h4>
+                            </div>
+                            <div class="card-body">
                                 <form action="{{ route('users.add_permission') }}" method="post">
                                     @csrf
                                     <div class="form-group">
