@@ -48,7 +48,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/merek', 'MerekController')->except([
             'show'
         ]);
-        Route::resource('/produk', 'ProductController');
+        Route::resource('/produk', 'ProdukController');
     });
     
     //route group untuk kasir
