@@ -108,7 +108,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label for="expired">Expired Warranty</label>
-                                                <input type="date" id="start" name="expired"
+                                                <input type="date" id="expired" name="expired"
                                                     value="{{ $produk->expired }}"
                                                     min="2018-01-01" max="2018-12-31"
                                                     class="form-control" >
