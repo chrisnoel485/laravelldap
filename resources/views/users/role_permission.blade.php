@@ -118,16 +118,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-12">
-                        <div class="card-header">        
-                            <h4 class="card-title">Set Permission to Role</h4>
-                        </div>
-                            @slot('footer')
-                               
-                            @endslot
-                        @endcard
-                    </div>
                 </div>
             </div>
         </section>
