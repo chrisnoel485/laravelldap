@@ -30,16 +30,6 @@
                         <form action="{{ route('users.set_role', $user->id) }}" method="post">
                             @csrf
                             <input type="hidden" name="_method" value="PUT">
-                        @card
-                            @slot('title')
-                            @endslot
-                            
-                            @if (session('success'))
-                                @alert(['type' => 'success'])
-                                    {{ session('success') }}
-                                @endalert
-                            @endif
-                            
                             <div class="table-responsive">
                                 <table class="table table-hover table-bordered">
                                     <thead>
@@ -67,14 +57,10 @@
                                     </thead>
                                 </table>
                             </div>
-                            @slot('footer')
-                                <div class="card-footer">
-                                    <button type="submit" class="btn btn-primary btn-sm float-right">
-                                        Set Role
-                                    </button>
-                                </div>
-                            @endslot
-                        @endcard
+                            <div class="card-footer">
+                                <a href="{{ URL::to('users') }}" class="btn btn-outline-info">Kembali</a>
+                                <input type="submit" value="Proses" class="btn btn-primary pull-right">
+                            </div>
                         </form>
                     </div>
                 </div>

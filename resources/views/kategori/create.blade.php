@@ -42,13 +42,13 @@
                                         <form action="{{ route('kategori.store') }}" method="POST">
                                             @csrf
                                             <div class="form-group">
-                                                            <label for="nama">Nama Kategori</label>
-                                                            <input type="text" name="nama" placeholder="Masukkan Nama Kategori" class="form-control" >
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="deskripsi">Deskripsi</label>
-                                                            <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" placeholder="Masukkan Deskripsi Kategori" class="form-control"></textarea>
-                                                        </div>
+                                                <label for="nama">Nama Kategori</label>
+                                                <input type="text" name="nama" placeholder="Masukkan Nama Kategori" class="form-control" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="deskripsi">Deskripsi</label>
+                                                <textarea name="deskripsi" id="deskripsi" cols="5" rows="5" placeholder="Masukkan Deskripsi Kategori" class="form-control"></textarea>
+                                            </div>
                                             <div class="card-footer">
                                                 <a href="{{ URL::to('kategori') }}" class="btn btn-outline-info">Kembali</a>
                                                 <input type="submit" value="Proses" class="btn btn-primary pull-right">
