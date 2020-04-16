@@ -107,11 +107,11 @@
                                                     class="form-control {{ $errors->has('tahun') ? 'is-invalid':'' }}" id="tahun" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="expired">Serial Number Produk</label>
-                                                <input type="text" 
-                                                    name="expired"
+                                                <label for="expired">Expired Warranty</label>
+                                                <input type="date" id="start" name="expired"
                                                     value="{{ $produk->expired }}"
-                                                    class="form-control {{ $errors->has('sn') ? 'is-invalid':'' }}" id="expired" required>
+                                                    min="2018-01-01" max="2018-12-31"
+                                                    class="form-control" >
                                             </div>
                                             <div class="card-footer">
                                                 <a href="{{ URL::to('produk') }}" class="btn btn-outline-info">Kembali</a>
