@@ -38,7 +38,7 @@ Route::group(['middleware' => 'auth'], function() {
     
     //route yang berada dalam group ini, hanya bisa diakses oleh user
     //yang memiliki permission yang telah disebutkan dibawah
-    Route::group(['middleware' => ['permission:show produk|create produk|delete produk']], function() {
+    Route::group(['middleware' => ['permission:produk']], function() {
         Route::resource('/kategori', 'KategoriController')->except([
             'show'
         ]);
