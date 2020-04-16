@@ -29,7 +29,7 @@
                         </p>
                     </a>
                 </li>
-                @if (auth()->user()->can('show products') || auth()->user()->can('delete products') || auth()->user()->can('create products'))
+                @if (auth()->user()->can('show produk') || auth()->user()->can('delete produk') || auth()->user()->can('create produk'))
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
