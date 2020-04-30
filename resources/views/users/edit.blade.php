@@ -44,13 +44,6 @@
                                             @csrf
                                             <input type="hidden" name="_method" value="PUT">
                                             <div class="form-group">
-                                                <label for="">Status</label>
-                                                <select id="status" name="status" class="form-control">
-                                                    <option value="1" {{ $user->status =='1'?'selected':'' }}>Aktif</option>
-                                                    <option value="0" {{ $user->status =='0'?'selected':'' }}>Suspend</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
                                                 <label for="">Nama</label>
                                                 <input type="text" name="name" 
                                                     value="{{ $user->name }}"
@@ -71,6 +64,13 @@
                                                     class="form-control {{ $errors->has('password') ? 'is-invalid':'' }}">
                                                 <p class="text-danger">{{ $errors->first('password') }}</p>
                                                 <p class="text-warning">Biarkan kosong, jika tidak ingin mengganti password</p>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="">Status</label>
+                                                <select id="status" name="status" class="form-control">
+                                                    <option value="1" {{ $user->status =='1'?'selected':'' }}>Aktif</option>
+                                                    <option value="0" {{ $user->status =='0'?'selected':'' }}>Suspend</option>
+                                                </select>
                                             </div>
                                             <div class="card-footer">
                                                 <a href="{{ URL::to('merek') }}" class="btn btn-outline-info">Kembali</a>
