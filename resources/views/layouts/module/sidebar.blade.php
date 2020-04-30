@@ -65,7 +65,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
                         <p>
-                            Manajemen Asset Server
+                            Data Asset Server
                             <i class="right fa fa-angle-left"></i>
                         </p>
                     </a>
