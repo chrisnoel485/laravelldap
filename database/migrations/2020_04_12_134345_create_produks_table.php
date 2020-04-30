@@ -21,8 +21,8 @@ class CreateProduksTable extends Migration
             $table->integer('kategori_id')->unsigned();;
             $table->integer('lokasi_id')->unsigned();;
             $table->integer('merek_id')->unsigned();;
-            $table->year('tahun');
-            $table->time('expired', 0);
+            $table->date('tahun');
+            $table->date('expired');
             $table->timestamps();
             $table->foreign('kategori_id')->references('id')->on('kategoris')
                 ->onDelete('cascade');
