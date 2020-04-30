@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function() {
     
     //Route yang berada dalam group ini hanya dapat diakses oleh user
     //yang memiliki role admin
-    //Route::group(['middleware' => ['role:admin']], function () {
+    Route::group(['middleware' => ['role:admin']], function () {
         Route::resource('/role', 'RoleController')->except([
             'show', 'edit', 'update'
         ]);
@@ -33,7 +33,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/users/permission', 'UserController@addPermission')->name('users.add_permission');
         Route::get('/users/role-permission', 'UserController@rolePermission')->name('users.roles_permission');
         Route::put('/users/permission/{role}', 'UserController@setRolePermission')->name('users.setRolePermission');
-    //});
+    });
 
     Route::group(['middleware' => ['role:admin server']], function () {
         //Route::group(['middleware' => ['permission:server']], function() {
