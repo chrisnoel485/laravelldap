@@ -29,43 +29,6 @@
                         </p>
                     </a>
                 </li>
-                @if (auth()->user()->can('produk'))
-                <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-server"></i>
-                        <p>
-                            Manajemen Produk
-                            <i class="right fa fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                                <a href="{{ route('kategori.index') }}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Kategori</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                                <a href="{{ route('lokasi.index') }}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Lokasi</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                                <a href="{{ route('merek.index') }}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Merek</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('produk.index') }}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Produk</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                @endif
                 @role('admin')
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
@@ -97,6 +60,44 @@
                     </ul>
                 </li>
                 @endrole
+                @if (auth()->user()->can('produk'))
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-server"></i>
+                        <p>
+                            Manajemen Asset Server
+                            <i class="right fa fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                                <a href="{{ route('kategori.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Kategori</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                                <a href="{{ route('lokasi.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Lokasi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                                <a href="{{ route('merek.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Merek</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('produk.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Produk</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+                
                 <li class="nav-item has-treeview">
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
