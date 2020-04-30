@@ -16,11 +16,11 @@ Route::get('/', function() {
     return redirect(route('login'));
 });
 Auth::routes();
-//Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function() {
     
     //Route yang berada dalam group ini hanya dapat diakses oleh user
     //yang memiliki role admin
-  //  Route::group(['middleware' => ['role:admin']], function () {
+  // Route::group(['middleware' => ['role:admin']], function () {
         Route::resource('/role', 'RoleController')->except([
             'show', 'edit', 'update'
        ]);
@@ -58,4 +58,4 @@ Auth::routes();
     
     //home kita taruh diluar group karena semua jenis user yg login bisa mengaksesnya
     Route::get('/home', 'HomeController@index')->name('home');
-//});
+});
