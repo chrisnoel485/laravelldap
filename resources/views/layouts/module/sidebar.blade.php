@@ -60,7 +60,7 @@
                     </ul>
                 </li>
                 <!-- @endrole -->
-                <!-- @if (auth()->server()->can('admin'))-->
+                <!-- @if (auth()->user()->can('admin'))-->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
