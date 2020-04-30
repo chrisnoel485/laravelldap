@@ -44,6 +44,17 @@
                                             @csrf
                                             <input type="hidden" name="_method" value="PUT">
                                             <div class="form-group">
+                                                <label for="">Status</label>
+                                                <select name="status" id="status" 
+                                                    required class="form-control {{ $errors->has('status') ? 'is-invalid':'' }}">
+                                                    <option value="">Pilih</option>
+                                                    @foreach ($user as $row)
+                                                        <option value="{{ $row->id }}" {{ $row->id == $user->status ? 'selected':'' }}>
+                                                            {{ ucfirst($row->status) }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            <div class="form-group">
                                                 <label for="">Nama</label>
                                                 <input type="text" name="name" 
                                                     value="{{ $user->name }}"

@@ -31,8 +31,7 @@ class UserController extends Controller
             'name' => 'required|string|max:100',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
-            'role' => 'required|string|exists:roles,name',
-            //'status' => 'required'
+            'role' => 'required|string|exists:roles,name'
         ]);
         
         $user = User::firstOrCreate([

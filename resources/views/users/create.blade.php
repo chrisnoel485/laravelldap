@@ -67,15 +67,6 @@
                                                 </select>
                                                 <p class="text-danger">{{ $errors->first('role') }}</p>
                                             </div>
-                                            <!-- <div class="form-group">
-                                                <label for="">Status</label>
-                                                <select name="status" class="form-control {{ $errors->has('status') ? 'is-invalid':'' }}" required>
-                                                    <option value="">Pilih</option>
-                                                    <option value="0">Suspend</option>
-                                                    <option value="1">Aktif</option>
-                                                </select>
-                                                <p class="text-danger">{{ $errors->first('role') }}</p>
-                                            </div> -->
                                             <div class="card-footer">
                                                 <a href="{{ URL::to('users') }}" class="btn btn-outline-info">Kembali</a>
                                                 <input type="submit" value="Proses" class="btn btn-primary pull-right">
