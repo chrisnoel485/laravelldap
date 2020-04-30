@@ -50,7 +50,9 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('users.edit', compact('user'));
+        return view('users.edit', ['servers' => $server]);//compact('user'));
+        //$server = DB::table('servers')->where('id',$id)->get();
+	   // return view('server/edit',['servers' => $server]);
     }
     
     public function update(Request $request, $id)
