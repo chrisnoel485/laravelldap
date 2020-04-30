@@ -20,10 +20,10 @@ Route::group(['middleware' => 'auth'], function() {
     
     //Route yang berada dalam group ini hanya dapat diakses oleh user
     //yang memiliki role admin
-    Route::group(['middleware' => ['role:admin']], function () {
+  //  Route::group(['middleware' => ['role:admin']], function () {
         Route::resource('/role', 'RoleController')->except([
             'show', 'edit', 'update'
-        ]);
+       ]);
         
         Route::resource('/users', 'UserController')->except([
             'show'
@@ -33,12 +33,12 @@ Route::group(['middleware' => 'auth'], function() {
         Route::post('/users/permission', 'UserController@addPermission')->name('users.add_permission');
         Route::get('/users/role-permission', 'UserController@rolePermission')->name('users.roles_permission');
         Route::put('/users/permission/{role}', 'UserController@setRolePermission')->name('users.setRolePermission');
-    });
+    //});
     
     
     //route yang berada dalam group ini, hanya bisa diakses oleh user
     //yang memiliki permission yang telah disebutkan dibawah
-    Route::group(['middleware' => ['permission:produk']], function() {
+    //Route::group(['middleware' => ['permission:produk']], function() {
         Route::resource('/kategori', 'KategoriController')->except([
             'show'
         ]);
@@ -49,7 +49,7 @@ Route::group(['middleware' => 'auth'], function() {
             'show'
         ]);
         Route::resource('/produk', 'ProdukController');
-    });
+    //});
     
     //route group untuk kasir
     Route::group(['middleware' => ['role:kasir']], function() {
