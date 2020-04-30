@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Produk;
+use App\Server;
 use Illuminate\Http\Request;
 use App\Kategori;
 use App\Lokasi;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 
 
-class ProdukController extends Controller
+class ServerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,10 +24,10 @@ class ProdukController extends Controller
     public function index()
     {
         //
-        //$produk = Produk::orderBy('created_at', 'DESC')->paginate(10);
-        //return view('produk.index', compact('produk'));
-        $produk = Produk::with('kategori','lokasi','merek')->orderBy('created_at', 'DESC')->paginate(10);
-        return view('produk.index', compact('produk'));
+        //$server = Server::orderBy('created_at', 'DESC')->paginate(10);
+        //return view('server.index', compact('server'));
+        $server = Server::with('kategori','lokasi','merek')->orderBy('created_at', 'DESC')->paginate(10);
+        return view('server.index', compact('server'));
     }
 
     /**
@@ -41,7 +41,7 @@ class ProdukController extends Controller
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
         $lokasi = Lokasi::orderBy('nama', 'ASC')->get();
         $merek = Merek::orderBy('nama', 'ASC')->get();
-        return view('produk.create', compact('kategori','lokasi','merek'));
+        return view('server.create', compact('kategori','lokasi','merek'));
     }
 
     /**
@@ -67,24 +67,24 @@ class ProdukController extends Controller
         ];
  
         $validator = Validator::make($rules, [
-            'nama.required'=>'Nama Produk Tidak Boleh Kosong',
+            'nama.required'=>'Nama Server Tidak Boleh Kosong',
             'sn.required'=>'Serial Number Tidak Boleh Kosong',
             'deskripsi.required'=>'Deskripsi Tidak Boleh Kosong',
-            'kategori_id.required'=>'Kategori Produk Tidak Boleh Kosong',
-            'lokasi_id.required'=>'Lokasi Produk Tidak Boleh Kosong',
-            'merek_id.required'=>'Merek Produk Tidak Boleh Kosong',
-            'tahun.required'=>'Tahun Produk Tidak Boleh Kosong',
-            'expired.required'=>'Expired Produk Tidak Boleh Kosong',
+            'kategori_id.required'=>'Kategori Server Tidak Boleh Kosong',
+            'lokasi_id.required'=>'Lokasi Server Tidak Boleh Kosong',
+            'merek_id.required'=>'Merek Server Tidak Boleh Kosong',
+            'tahun.required'=>'Tahun Server Tidak Boleh Kosong',
+            'expired.required'=>'Expired Server Tidak Boleh Kosong',
         ]);
         if ($validator->fails()) {
  
             //refresh halaman
-            return Redirect::to('produk/create')
+            return Redirect::to('server/create')
             ->withErrors($validator);
  
         }else{
 
-            DB::table('produks')->insert([
+            DB::table('servers')->insert([
                 'nama' => $request->nama,
                 'sn' => $request->sn,
                 'deskripsi' => $request->deskripsi,
@@ -96,19 +96,19 @@ class ProdukController extends Controller
             ]);
             
  
-            Session::flash('message','Succes Add Produk');
+            Session::flash('message','Succes Add Server');
  
-            return redirect('/produk');
+            return redirect('/server');
         }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Produk  $produk
+     * @param  \App\Server  $server
      * @return \Illuminate\Http\Response
      */
-    public function show(Produk $produk)
+    public function show(Server $server)
     {
         //
     }
@@ -116,24 +116,24 @@ class ProdukController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Produk  $produk
+     * @param  \App\Server  $server
      * @return \Illuminate\Http\Response
      */
     public function edit( $id)
     {
         //
-        $produk = Produk::findOrFail($id);
+        $server = Server::findOrFail($id);
         $kategori = Kategori::orderBy('nama', 'ASC')->get();
         $lokasi = Lokasi::orderBy('nama', 'ASC')->get();
         $merek = Merek::orderBy('nama', 'ASC')->get();
-        return view('produk.edit', compact('produk', 'kategori','lokasi','merek'));
+        return view('server.edit', compact('server', 'kategori','lokasi','merek'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Produk  $produk
+     * @param  \App\Server  $server
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request,  $id)
@@ -153,24 +153,24 @@ class ProdukController extends Controller
         ];
  
         $validator = Validator::make($rules, [
-            'nama.required'=>'Nama Produk Tidak Boleh Kosong',
+            'nama.required'=>'Nama Server Tidak Boleh Kosong',
             'sn.required'=>'Serial Number Tidak Boleh Kosong',
             'deskripsi.required'=>'Deskripsi Tidak Boleh Kosong',
-            'kategori_id.required'=>'Kategori Produk Tidak Boleh Kosong',
-            'lokasi_id.required'=>'Lokasi Produk Tidak Boleh Kosong',
-            'merek_id.required'=>'Merek Produk Tidak Boleh Kosong',
-            'tahun.required'=>'Tahun Produk Tidak Boleh Kosong',
-            'expired.required'=>'Expired Produk Tidak Boleh Kosong',
+            'kategori_id.required'=>'Kategori Server Tidak Boleh Kosong',
+            'lokasi_id.required'=>'Lokasi Server Tidak Boleh Kosong',
+            'merek_id.required'=>'Merek Server Tidak Boleh Kosong',
+            'tahun.required'=>'Tahun Server Tidak Boleh Kosong',
+            'expired.required'=>'Expired Server Tidak Boleh Kosong',
         ]);
         if ($validator->fails()) {
  
             //refresh halaman
-            return Redirect::to('produk.edit')
+            return Redirect::to('server.edit')
             ->withErrors($validator);
  
         }else{
-            $produk = Produk::findOrFail($id);
-            $produk->update([
+            $server = Server::findOrFail($id);
+            $server->update([
                 'nama' => $request->nama,
                 'sn' => $request->sn,
                 'deskripsi' => $request->deskripsi,
@@ -182,25 +182,25 @@ class ProdukController extends Controller
             ]);
             
  
-            Session::flash('message','Succes Edit Produk');
+            Session::flash('message','Succes Edit Server');
  
-            return redirect('/produk');
+            return redirect('/server');
         }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Produk  $produk
+     * @param  \App\Server  $server
      * @return \Illuminate\Http\Response
      */
     public function destroy( $id)
     {
         //
-        $produk = Produk::findOrFail($id);
-        $produk->delete();
+        $server = Server::findOrFail($id);
+        $server->delete();
 
-        Session::flash('message','Succes Delete Produk');
-	    return redirect('/produk');
+        Session::flash('message','Succes Delete Server');
+	    return redirect('/server');
     }
 }

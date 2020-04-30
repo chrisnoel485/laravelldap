@@ -36,7 +36,7 @@ Route::group(['middleware' => 'auth'], function() {
     });
 
     Route::group(['middleware' => ['role:admin server']], function () {
-        //Route::group(['middleware' => ['permission:produk']], function() {
+        //Route::group(['middleware' => ['permission:server']], function() {
             Route::resource('/kategori', 'KategoriController')->except([
                 'show'
             ]);
@@ -46,14 +46,14 @@ Route::group(['middleware' => 'auth'], function() {
             Route::resource('/merek', 'MerekController')->except([
                 'show'
             ]);
-            Route::resource('/produk', 'ProdukController');
+            Route::resource('/server', 'ServerController');
         //});
     });
     
     
     //route yang berada dalam group ini, hanya bisa diakses oleh user
     //yang memiliki permission yang telah disebutkan dibawah
-    //Route::group(['middleware' => ['permission:produk']], function() {
+    //Route::group(['middleware' => ['permission:server']], function() {
     //    Route::resource('/kategori', 'KategoriController')->except([
     //        'show'
     //    ]);
@@ -63,7 +63,7 @@ Route::group(['middleware' => 'auth'], function() {
     //    Route::resource('/merek', 'MerekController')->except([
     //        'show'
     // ]);
-    //   Route::resource('/produk', 'ProdukController');
+    //   Route::resource('/server', 'ServerController');
    // });
     
     //home kita taruh diluar group karena semua jenis user yg login bisa mengaksesnya

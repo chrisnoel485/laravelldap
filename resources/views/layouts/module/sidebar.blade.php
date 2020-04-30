@@ -61,7 +61,7 @@
                 </li>
                 @endrole
                 @role('admin server')
-                <!-- @if (auth()->user()->can('produk')) -->
+                <!-- @if (auth()->user()->can('server')) -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
@@ -90,9 +90,9 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('produk.index') }}" class="nav-link">
+                            <a href="{{ route('server.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Produk</p>
+                                <p>Server</p>
                             </a>
                         </li>
                     </ul>
