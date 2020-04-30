@@ -61,8 +61,7 @@
                 </li>
                 @endrole
                 @role('admin server')
-                <!-- @if (auth()->user()->can('produk') || auth()->user()->can('produk') || auth()->user()->can('produk')) -->
-                @if (auth()->user()->can('produk'))
+                <!-- @if (auth()->user()->can('produk')) -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
