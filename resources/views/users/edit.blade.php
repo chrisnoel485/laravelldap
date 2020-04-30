@@ -73,7 +73,7 @@
                                                 </select>
                                             </div>
                                             <div class="card-footer">
-                                                <a href="{{ URL::to('merek') }}" class="btn btn-outline-info">Kembali</a>
+                                                <a href="{{ URL::to('user') }}" class="btn btn-outline-info">Kembali</a>
                                                 <button class="btn btn-info">Update</button>
                                             </div>
                                         </form>
