@@ -49,6 +49,7 @@
                                                     <option value="1" {{ $user->status =='1'?'selected':'' }}>Aktif</option>
                                                     <option value="0" {{ $user->status =='0'?'selected':'' }}>Suspend</option>
                                                 </select>
+                                            </div>
                                             <div class="form-group">
                                                 <label for="">Nama</label>
                                                 <input type="text" name="name" 
