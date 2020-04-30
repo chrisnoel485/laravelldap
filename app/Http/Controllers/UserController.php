@@ -67,7 +67,7 @@ class UserController extends Controller
         $user->update([
             'name' => $request->name,
             'password' => $password,
-            'status' => $request->name,
+            'status' => $request->status
         ]);
         return redirect(route('users.index'))->with(['success' => 'User: <strong>' . $user->name . '</strong> Diperbaharui']);
     }
