@@ -60,7 +60,8 @@
                     </ul>
                 </li>
                 @endrole
-                @if (auth()->user()->can('produk'))
+                @role('admin server')
+                
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
@@ -96,7 +97,7 @@
                         </li>
                     </ul>
                 </li>
-                @endif
+                @endrole
                 <li class="nav-item has-treeview">
                     <a class="nav-link" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
