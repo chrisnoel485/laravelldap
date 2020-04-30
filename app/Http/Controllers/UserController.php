@@ -31,16 +31,16 @@ class UserController extends Controller
             'name' => 'required|string|max:100',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
-            'role' => 'required|string|exists:roles,name'
+            'role' => 'required|string|exists:roles,name',
+            'status' => 'required'
         ]);
         
         $user = User::firstOrCreate([
             'email' => $request->email
         ], [
             'name' => $request->name,
-            'status' => true,
-            'password' => bcrypt($request->password)
-            //'status' => true
+            'password' => bcrypt($request->password),
+            'status' => $request->status
         ]);
         
         $user->assignRole($request->role);
