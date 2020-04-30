@@ -29,7 +29,6 @@
                         </p>
                     </a>
                 </li>
-                <!-- @role('admin') -->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-users"></i>
@@ -59,8 +58,6 @@
                         </li>
                     </ul>
                 </li>
-                <!-- @endrole -->
-                <!-- @if (auth()->user()->can('admin'))-->
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
@@ -96,7 +93,6 @@
                         </li>
                     </ul>
                 </li>
-                <!-- @endif -->
                 
                 <li class="nav-item has-treeview">
                     <a class="nav-link" href="{{ route('logout') }}"
