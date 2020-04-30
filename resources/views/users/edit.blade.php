@@ -45,7 +45,7 @@
                                             <input type="hidden" name="_method" value="PUT">
                                             <div class="form-group">
                                                 <label for="">Status</label>
-                                                @foreach($users as $p)
+                                                @foreach($user as $p)
                                                 <select id="kp" name="kp" class="form-control">
                                                     <option value="1" {{ $p->status =='1'?'selected':'' }}>Aktif</option>
                                                     <option value="0" {{ $p->status =='0'?'selected':'' }}>Suspend</option>
