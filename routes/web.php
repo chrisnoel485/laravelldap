@@ -34,6 +34,19 @@ Route::group(['middleware' => 'auth'], function() {
         Route::get('/users/role-permission', 'UserController@rolePermission')->name('users.roles_permission');
         Route::put('/users/permission/{role}', 'UserController@setRolePermission')->name('users.setRolePermission');
     });
+
+    Route::group(['middleware' => ['role:admin server']], function () {
+        Route::resource('/kategori', 'KategoriController')->except([
+            'show'
+        ]);
+        Route::resource('/lokasi', 'LokasiController')->except([
+            'show'
+        ]);
+        Route::resource('/merek', 'MerekController')->except([
+            'show'
+        ]);
+        Route::resource('/produk', 'ProdukController');
+    });
     
     
     //route yang berada dalam group ini, hanya bisa diakses oleh user
@@ -49,11 +62,6 @@ Route::group(['middleware' => 'auth'], function() {
             'show'
         ]);
         Route::resource('/produk', 'ProdukController');
-    });
-    
-    //route group untuk kasir
-    Route::group(['middleware' => ['role:kasir']], function() {
-        
     });
     
     //home kita taruh diluar group karena semua jenis user yg login bisa mengaksesnya
