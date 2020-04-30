@@ -65,7 +65,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
                         <p>
-                            Data Asset Server
+                            Data Server
                             <i class="right fa fa-angle-left"></i>
                         </p>
                     </a>
@@ -92,6 +92,43 @@
                             <a href="{{ route('server.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>Server</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                @endrole
+                @role('admin pc support')
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-server"></i>
+                        <p>
+                            Data PC Support
+                            <i class="right fa fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                                <a href="{{ route('kategori.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Kategori</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                                <a href="{{ route('lokasi.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Lokasi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                                <a href="{{ route('merek.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Merek</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('pcsupport.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>PC Support</p>
                             </a>
                         </li>
                     </ul>
