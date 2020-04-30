@@ -36,16 +36,18 @@ Route::group(['middleware' => 'auth'], function() {
     });
 
     Route::group(['middleware' => ['role:admin server']], function () {
-        Route::resource('/kategori', 'KategoriController')->except([
-            'show'
-        ]);
-        Route::resource('/lokasi', 'LokasiController')->except([
-            'show'
-        ]);
-        Route::resource('/merek', 'MerekController')->except([
-            'show'
-        ]);
-        Route::resource('/produk', 'ProdukController');
+        Route::group(['middleware' => ['permission:produk']], function() {
+            Route::resource('/kategori', 'KategoriController')->except([
+                'show'
+            ]);
+            Route::resource('/lokasi', 'LokasiController')->except([
+                'show'
+            ]);
+            Route::resource('/merek', 'MerekController')->except([
+                'show'
+            ]);
+            Route::resource('/produk', 'ProdukController');
+        });
     });
     
     
@@ -60,8 +62,8 @@ Route::group(['middleware' => 'auth'], function() {
     //    ]);
     //    Route::resource('/merek', 'MerekController')->except([
     //        'show'
-       // ]);
-     //   Route::resource('/produk', 'ProdukController');
+    // ]);
+    //   Route::resource('/produk', 'ProdukController');
    // });
     
     //home kita taruh diluar group karena semua jenis user yg login bisa mengaksesnya
