@@ -29,7 +29,7 @@
                         </p>
                     </a>
                 </li>
-                <!-- @role('admin') -->
+                
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-users"></i>
@@ -59,7 +59,6 @@
                         </li>
                     </ul>
                 </li>
-                <!-- @endrole -->
                 
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
