@@ -46,10 +46,9 @@
                                             <div class="form-group">
                                                 <label for="">Status</label>
                                                 <select id="status" name="status" class="form-control">
-                                                @foreach ($kategori as $row)
-                                                    <option value="{{ $row->id }}" {{ $row->id == $server->kategori_id ? 'selected':'' }}>
-                                                        Aktif
-                                                    </option>
+                                                @foreach ($user as $row)
+                                                    <option value="1" {{ $row->status =='1'?'selected':'' }}>Aktif</option>
+                                                    <option value="0" {{ $row->status =='0'?'selected':'' }}>Suspend</option>
                                                 @endforeach
                                                 </select>
                                             <div class="form-group">
