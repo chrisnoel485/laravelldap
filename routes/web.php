@@ -36,7 +36,7 @@ Route::group(['middleware' => 'auth'], function() {
     });
 
     Route::group(['middleware' => ['role:admin server']], function () {
-        Route::group(['middleware' => ['permission:produk']], function() {
+        //Route::group(['middleware' => ['permission:produk']], function() {
             Route::resource('/kategori', 'KategoriController')->except([
                 'show'
             ]);
@@ -47,7 +47,7 @@ Route::group(['middleware' => 'auth'], function() {
                 'show'
             ]);
             Route::resource('/produk', 'ProdukController');
-        });
+        //});
     });
     
     
