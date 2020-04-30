@@ -59,7 +59,6 @@ class UserController extends Controller
             'name' => 'required|string|max:100',
             'email' => 'required|email|exists:users,email',
             'password' => 'nullable|min:6',
-
         ]);
         
         $user = User::findOrFail($id);
@@ -67,7 +66,7 @@ class UserController extends Controller
         $user->update([
             'name' => $request->name,
             'password' => $password,
-            'status' => status
+            'status' => $status
         ]);
         return redirect(route('users.index'))->with(['success' => 'User: <strong>' . $user->name . '</strong> Diperbaharui']);
     }
