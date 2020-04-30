@@ -38,8 +38,9 @@ class UserController extends Controller
             'email' => $request->email
         ], [
             'name' => $request->name,
-            'password' => bcrypt($request->password),
-            'status' => true
+            'status' => true,
+            'password' => bcrypt($request->password)
+            //'status' => true
         ]);
         
         $user->assignRole($request->role);
