@@ -126,7 +126,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('pcsupport.index') }}" class="nav-link">
+                            <a href="{{ route('server.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
                                 <p>PC Support</p>
                             </a>
