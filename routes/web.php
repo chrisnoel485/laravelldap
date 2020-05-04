@@ -28,6 +28,15 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/users', 'UserController')->except([
             'show'
         ]);
+        Route::resource('/kategori', 'KategoriController')->except([
+            'show'
+        ]);
+        Route::resource('/lokasi', 'LokasiController')->except([
+            'show'
+        ]);
+        Route::resource('/merek', 'MerekController')->except([
+            'show'
+        ]);
         Route::get('/users/roles/{id}', 'UserController@roles')->name('users.roles');
         Route::put('/users/roles/{id}', 'UserController@setRole')->name('users.set_role');
         Route::post('/users/permission', 'UserController@addPermission')->name('users.add_permission');
@@ -39,15 +48,6 @@ Route::group(['middleware' => 'auth'], function() {
         //route yang berada dalam group ini, hanya bisa diakses oleh user
         //yang memiliki permission yang telah disebutkan dibawah
         //Route::group(['middleware' => ['permission:server']], function() {
-            Route::resource('/kategori', 'KategoriController')->except([
-                'show'
-            ]);
-            Route::resource('/lokasi', 'LokasiController')->except([
-                'show'
-            ]);
-            Route::resource('/merek', 'MerekController')->except([
-                'show'
-            ]);
             Route::resource('/server', 'ServerController');
         //});
     });

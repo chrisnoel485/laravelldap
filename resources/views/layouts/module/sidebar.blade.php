@@ -68,31 +68,22 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                    <li class="nav-item has-treeview">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fa fa-users"></i>
-                        <p>
-                            Manajemen Users
-                            <i class="right fa fa-angle-left"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('role.index') }}" class="nav-link">
+                                <a href="{{ route('kategori.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Role</p>
+                                <p>Kategori</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('users.index') }}" class="nav-link">
+                                <a href="{{ route('lokasi.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Users</p>
+                                <p>Lokasi</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('users.roles_permission') }}" class="nav-link">
+                                <a href="{{ route('merek.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Role Permission</p>
+                                <p>Merek</p>
                             </a>
                         </li>
                     </ul>
@@ -105,7 +96,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
                         <p>
-                        Manajemen Server
+                            Data Server
                             <i class="right fa fa-angle-left"></i>
                         </p>
                     </a>
