@@ -88,15 +88,13 @@
                         </li>
                     </ul>
                 </li>
-                    </ul>
-                </li>
                 @endrole
                 @role('admin server')
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
                         <p>
-                            Data Server
+                            Manajemen Server
                             <i class="right fa fa-angle-left"></i>
                         </p>
                     </a>
