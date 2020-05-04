@@ -42,17 +42,17 @@
                                                     <thead>
                                                         <tr>
                                                             <th>Nama</th>
-                                                            <td>:</td>
+                                                            <td class="text-center">:</td>
                                                             <td>{{ $user->name }}</td>
                                                         </tr>
                                                         <tr>
                                                             <th>Email</th>
-                                                            <td>:</td>
+                                                            <td class="text-center">:</td>
                                                             <td><a href="mailto:{{ $user->email }}">{{ $user->email }}</a></td>
                                                         </tr>
                                                         <tr>
                                                             <th>Role</th>
-                                                            <td>:</td>
+                                                            <td class="text-center">:</td>
                                                             <td>
                                                                 @foreach ($roles as $row)
                                                                 <input type="radio" name="role" 

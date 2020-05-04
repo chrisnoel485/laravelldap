@@ -59,39 +59,61 @@
                         </li>
                     </ul>
                 </li>
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-users"></i>
+                        <p>
+                            Manajemen Produk
+                            <i class="right fa fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                    <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fa fa-users"></i>
+                        <p>
+                            Manajemen Users
+                            <i class="right fa fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('role.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Role</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('users.index') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Users</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('users.roles_permission') }}" class="nav-link">
+                                <i class="fa fa-circle-o nav-icon"></i>
+                                <p>Role Permission</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                    </ul>
+                </li>
                 @endrole
                 @role('admin server')
                 <li class="nav-item has-treeview">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
                         <p>
-                            Data Server
+                        Manajemen Server
                             <i class="right fa fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                                <a href="{{ route('kategori.index') }}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Kategori</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                                <a href="{{ route('lokasi.index') }}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Lokasi</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                                <a href="{{ route('merek.index') }}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Merek</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{ route('server.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Server</p>
+                                <p>Data Server</p>
                             </a>
                         </li>
                     </ul>
@@ -102,33 +124,15 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fa fa-server"></i>
                         <p>
-                            Data PC Support
+                            Manajemen PC Support
                             <i class="right fa fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                                <a href="{{ route('kategori.index') }}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Kategori</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                                <a href="{{ route('lokasi.index') }}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Lokasi</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                                <a href="{{ route('merek.index') }}" class="nav-link">
-                                <i class="fa fa-circle-o nav-icon"></i>
-                                <p>Merek</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a href="{{ route('server.index') }}" class="nav-link">
                                 <i class="fa fa-circle-o nav-icon"></i>
-                                <p>PC Support</p>
+                                <p>Data PC Support</p>
                             </a>
                         </li>
                     </ul>
