@@ -6,8 +6,6 @@ use App\Server;
 use App\Kategori;
 use App\Lokasi;
 use App\Merek;
-use Redirect;
-use Session;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class ServerExport implements FromCollection
@@ -17,8 +15,8 @@ class ServerExport implements FromCollection
     */
     public function collection()
     {
-        //return Server::all();
-        return Server::with('kategori','lokasi','merek')->orderBy('created_at', 'DESC')->paginate(10);
+        return Server::all();
+        //return Server::with('kategori','lokasi','merek')->orderBy('created_at', 'DESC')->paginate(10);
         //return view('server.index', compact('server'));
     }
 }

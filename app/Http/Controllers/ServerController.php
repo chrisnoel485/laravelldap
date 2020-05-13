@@ -12,7 +12,8 @@ use Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
-use App\Exports\SiswaExport;
+use App\Exports\ServerExport;
+use App\Exports\MerekExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 
