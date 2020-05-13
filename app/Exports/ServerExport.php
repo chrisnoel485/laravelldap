@@ -3,6 +3,11 @@
 namespace App\Exports;
 
 use App\Server;
+use App\Kategori;
+use App\Lokasi;
+use App\Merek;
+use Redirect;
+use Session;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class ServerExport implements FromCollection
