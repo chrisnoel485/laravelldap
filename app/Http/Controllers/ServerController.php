@@ -12,7 +12,7 @@ use Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
-use App\Exports\ServerExport;
+use App\Exports\MerekExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Controller;
 
@@ -208,6 +208,6 @@ class ServerController extends Controller
     }
     public function export_excel()
 	{
-		return Excel::download(new ServerExport, 'server.xlsx');
+		return Excel::download(new MerekExport, 'server.xlsx');
 	}
 }
