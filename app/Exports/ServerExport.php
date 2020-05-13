@@ -16,7 +16,7 @@ class ServerExport implements FromCollection
     public function collection()
     {
         //return Server::all();
-        return Server::with('kategori','lokasi','merek')->orderBy('created_at', 'DESC')->paginate(10);
+        return Server::with('kategori','lokasi','merek')->orderBy('created_at', 'DESC');
         //return view('server.index', compact('server'));
     }
 }
