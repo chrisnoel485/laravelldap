@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use App\Exports\MerekExport;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Http\Controllers\Controller;
 
 
 class ServerController extends Controller
