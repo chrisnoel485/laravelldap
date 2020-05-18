@@ -205,8 +205,4 @@ class ServerController extends Controller
         Session::flash('message','Succes Delete Server');
 	    return redirect('/server');
     }
-    public function export_excel()
-	{
-		return Excel::download(new MerekExport, 'server.xlsx');
-	}
 }
