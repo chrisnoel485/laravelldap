@@ -49,8 +49,8 @@ Route::group(['middleware' => 'auth'], function() {
         //yang memiliki permission yang telah disebutkan dibawah
         //Route::group(['middleware' => ['permission:server']], function() {
             Route::resource('/server', 'ServerController');
-            //Route::get('/server/export_excel', 'ServerController@export_excel');
-            Route::get('server/export_excel/', 'ServerController@export_excel');
+            Route::get('/server/export_excel', 'ServerController@export_excel');
+            //Route::get('server/export_excel/', 'ServerController@export_excel');
         //});
     });
     
