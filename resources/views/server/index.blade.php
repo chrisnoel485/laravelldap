@@ -30,10 +30,6 @@
                             <div class="card-header">
                                 <h3 class="card-title">List Server</h3>
                                 <div class="card-tools">
-                                    <a href="{{ URL::to('/server/export_excel')}}" class="btn btn-tool">
-                                        <i class="fa fa-plus"></i>
-                                        &nbsp; Export Data
-                                    </a>
                                     <a href="{{ URL::to('/server/create')}}" class="btn btn-tool">
                                         <i class="fa fa-plus"></i>
                                         &nbsp; Tambah

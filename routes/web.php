@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function() {
         Route::resource('/merek', 'MerekController')->except([
             'show'
         ]);
+        Route::get('mereks/export/', 'MereksController@export');
         Route::get('/users/roles/{id}', 'UserController@roles')->name('users.roles');
         Route::put('/users/roles/{id}', 'UserController@setRole')->name('users.set_role');
         Route::post('/users/permission', 'UserController@addPermission')->name('users.add_permission');
@@ -49,8 +50,6 @@ Route::group(['middleware' => 'auth'], function() {
         //yang memiliki permission yang telah disebutkan dibawah
         //Route::group(['middleware' => ['permission:server']], function() {
             Route::resource('/server', 'ServerController');
-            Route::get('/server/export_excel', 'ServerController@export_excel');
-            //Route::get('server/export_excel/', 'ServerController@export_excel');
         //});
     });
     

@@ -9,6 +9,8 @@ use Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
+use App\Exports\MereksExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MerekController extends Controller
 {
@@ -146,5 +148,9 @@ class MerekController extends Controller
 
         Session::flash('message','Succes Delete Merek');
 	    return redirect('/merek');
+    }
+    public function export() 
+    {
+        return Excel::download(new MereksExport, 'mereks.xlsx');
     }
 }
